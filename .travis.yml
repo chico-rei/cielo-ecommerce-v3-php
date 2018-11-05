@@ -1,0 +1,25 @@
+language: php
+
+dist: trusty
+
+matrix:
+  include:
+  - php: 7.1
+    env: ANALYSIS='true'
+  - php: 7.1
+    env: COMPOSER_ARGS='--prefer-lowest'
+  - php: 7.2
+  - php: nightly
+  allow_failures:
+  - php: nightly
+
+before_script:
+- composer update $COMPOSER_ARGS
+
+script:
+- mkdir -p build/logs
+- php vendor/bin/phpunit -c phpunit.xml.dist
+- if [[ "$ANALYSIS" == 'true' ]]; then php vendor/bin/phpcs ; fi
+
+after_success:
+- if [[ "$ANALYSIS" == 'true' ]]; then php vendor/bin/coveralls -v -r /home/travis/build/chico-rei/cielo-ecommerce-v3-php/ ; fi
