@@ -18,7 +18,7 @@ $cielo = new Cielo($merchant, true);
 try {
     $response = $cielo->sale()->void([
         'PaymentId' => 'PaymentId',
-        'Amount' => '10000',
+        'Amount' => Util::amountInCents(10.5),
     ]);
 
     $arrayResponse = $response->toArray();

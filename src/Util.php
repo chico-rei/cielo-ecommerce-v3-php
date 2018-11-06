@@ -28,4 +28,15 @@ class Util
 
         return $array;
     }
+
+    /**
+     * Return equivalent amount in cents
+     *
+     * @param float|null $amount
+     * @return int
+     */
+    public static function amountInCents(?float $amount): int
+    {
+        return $amount ? intval($amount*100) : 0;
+    }
 }
