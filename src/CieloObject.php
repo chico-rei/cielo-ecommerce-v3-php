@@ -35,7 +35,7 @@ abstract class CieloObject
      * @param $array
      * @return static
      */
-    public static function createFromArray(array $array = [])
+    public static function fromArray(array $array = [])
     {
         return new static($array);
     }

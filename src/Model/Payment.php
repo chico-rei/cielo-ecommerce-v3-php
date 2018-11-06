@@ -370,7 +370,7 @@ class Payment extends CieloObject
      * @param $array
      * @return static
      */
-    public static function createFromArray(array $array = [])
+    public static function fromArray(array $array = [])
     {
         $creditCard = $array['creditCard'] ?? $array['CreditCard'] ?? null;
         $debitCard = $array['debitCard'] ?? $array['DebitCard'] ?? null;
@@ -383,18 +383,18 @@ class Payment extends CieloObject
         $wallet = $array['wallet'] ?? $array['Wallet'] ?? null;
 
         $object = new static([
-            'creditCard' => isset($creditCard) ? Card::createFromArray($creditCard) : null,
-            'debitCard' => isset($debitCard) ? Card::createFromArray($debitCard) : null,
+            'creditCard' => isset($creditCard) ? Card::fromArray($creditCard) : null,
+            'debitCard' => isset($debitCard) ? Card::fromArray($debitCard) : null,
             'recurrentPayment' => isset($recurrentPayment) ?
-                RecurrentPayment::createFromArray($recurrentPayment) : null,
+                RecurrentPayment::fromArray($recurrentPayment) : null,
             'receivedDate' => isset($receivedDate) ? Carbon::parse($receivedDate) : null,
             'capturedDate' => isset($capturedDate) ? Carbon::parse($capturedDate) : null,
             'voidedDate' => isset($voidedDate) ? Carbon::parse($voidedDate) : null,
             'expirationDate' => isset($expirationDate) ? Carbon::parse($expirationDate) : null,
             'links' => isset($links) ? array_map(function ($newLink) {
-                return Link::createFromArray($newLink);
+                return Link::fromArray($newLink);
             }, $links) : null,
-            'wallet' => isset($wallet) ? Wallet::createFromArray($wallet) : null,
+            'wallet' => isset($wallet) ? Wallet::fromArray($wallet) : null,
         ]);
 
         return $object->fill($array, false);

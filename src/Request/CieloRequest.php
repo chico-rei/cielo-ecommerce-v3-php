@@ -34,15 +34,15 @@ abstract class CieloRequest extends CieloObject implements IRequest
      * @param $array
      * @return static
      */
-    public static function createFromArray(array $array = [])
+    public static function fromArray(array $array = [])
     {
         $customer = $array['Customer'] ?? $array['customer'] ?? null;
         $payment = $array['Payment'] ?? $array['payment'] ?? null;
 
         return new static([
             'merchantOrderId' => $array['MerchantOrderId'] ?? $array['merchantOrderId'] ?? null,
-            'customer' => isset($customer) ? Customer::createFromArray($customer) : null,
-            'payment' => isset($payment) ? Payment::createFromArray($payment) : null,
+            'customer' => isset($customer) ? Customer::fromArray($customer) : null,
+            'payment' => isset($payment) ? Payment::fromArray($payment) : null,
         ]);
     }
 

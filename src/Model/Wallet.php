@@ -66,12 +66,12 @@ class Wallet extends CieloObject
      * @param $array
      * @return static
      */
-    public static function createFromArray(array $array = [])
+    public static function fromArray(array $array = [])
     {
         $additionalData = $array['additionalData'] ?? $array['AdditionalData'] ?? null;
 
         $object = new self([
-            'additionalData' => isset($additionalData) ? AdditionalData::createFromArray($additionalData) : null,
+            'additionalData' => isset($additionalData) ? AdditionalData::fromArray($additionalData) : null,
         ]);
 
         return $object->fill($array, false);

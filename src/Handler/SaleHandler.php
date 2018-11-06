@@ -33,7 +33,7 @@ class SaleHandler
     public function create($payload): SaleResponse
     {
         if (is_array($payload)) {
-            $payload = CreateSaleRequest::createFromArray($payload);
+            $payload = CreateSaleRequest::fromArray($payload);
         }
 
         if (!$payload instanceof CreateSaleRequest) {
@@ -42,7 +42,7 @@ class SaleHandler
 
         $response = $this->client->sendApiRequest($payload);
 
-        return SaleResponse::createFromArray($response);
+        return SaleResponse::fromArray($response);
     }
 
     /**
@@ -56,7 +56,7 @@ class SaleHandler
     public function get($payload): SaleResponse
     {
         if (is_string($payload)) {
-            $payload = GetSaleRequest::createFromArray(['paymentId' => $payload]);
+            $payload = GetSaleRequest::fromArray(['paymentId' => $payload]);
         }
 
         if (!$payload instanceof GetSaleRequest) {
@@ -65,6 +65,6 @@ class SaleHandler
 
         $response = $this->client->sendQueryApiRequest($payload);
 
-        return SaleResponse::createFromArray($response);
+        return SaleResponse::fromArray($response);
     }
 }

@@ -171,7 +171,7 @@ class RecurrentPayment extends CieloObject
      * @param $array
      * @return static
      */
-    public static function createFromArray(array $array = [])
+    public static function fromArray(array $array = [])
     {
         $nextRecurrency = $array['nextRecurrency'] ?? $array['NextRecurrency'] ?? null;
         $startDate = $array['startDate'] ?? $array['StartDate'] ?? null;
@@ -186,10 +186,10 @@ class RecurrentPayment extends CieloObject
             'endDate' => isset($endDate) ? Carbon::parse($endDate) : null,
             'createDate' => isset($createDate) ? Carbon::parse($createDate) : null,
             'links' => isset($links) ? array_map(function ($newLink) {
-                return Link::createFromArray($newLink);
+                return Link::fromArray($newLink);
             }, $links) : null,
             'recurrentTransactions' => isset($recurrentTransactions) ? array_map(function ($newTransaction) {
-                return RecurrentTransaction::createFromArray($newTransaction);
+                return RecurrentTransaction::fromArray($newTransaction);
             }, $recurrentTransactions) : null,
         ]);
 
