@@ -16,15 +16,9 @@ $merchant = Merchant::fromArray([
 $cielo = new Cielo($merchant, true);
 
 try {
-    // Total
-    $response = $cielo->sale()->capture([
+    $response = $cielo->sale()->void([
         'PaymentId' => 'PaymentId',
-    ]);
-
-    // Parcial
-    $response = $cielo->sale()->capture([
-        'PaymentId' => 'PaymentId',
-        'Amount' => '500',
+        'Amount' => '10000',
     ]);
 
     $arrayResponse = $response->toArray();

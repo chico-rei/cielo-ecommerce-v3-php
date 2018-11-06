@@ -6,6 +6,7 @@ use ChicoRei\Packages\Cielo\Client;
 use ChicoRei\Packages\Cielo\Request\CaptureSaleRequest;
 use ChicoRei\Packages\Cielo\Request\CreateSaleRequest;
 use ChicoRei\Packages\Cielo\Request\GetSaleRequest;
+use ChicoRei\Packages\Cielo\Request\VoidSaleRequest;
 use ChicoRei\Packages\Cielo\Response\SaleResponse;
 use ChicoRei\Packages\Cielo\Response\UpdateSaleResponse;
 
@@ -88,6 +89,31 @@ class SaleHandler
 
         if (!$payload instanceof CaptureSaleRequest) {
             throw new \RuntimeException('Payload must be a string, an array or an instance of CaptureSaleRequest');
+        }
+
+        $response = $this->client->sendApiRequest($payload);
+
+        return UpdateSaleResponse::fromArray($response);
+    }
+
+    /**
+     * Void Sale
+     *
+     * @param string|array|VoidSaleRequest $payload
+     * @return UpdateSaleResponse
+     * @throws \ChicoRei\Packages\Cielo\Exception\CieloAPIException
+     * @throws \ChicoRei\Packages\Cielo\Exception\CieloClientException
+     */
+    public function void($payload): UpdateSaleResponse
+    {
+        if (is_string($payload)) {
+            $payload = VoidSaleRequest::fromArray(['paymentId' => $payload]);
+        } elseif (is_array($payload)) {
+            $payload = VoidSaleRequest::fromArray($payload);
+        }
+
+        if (!$payload instanceof VoidSaleRequest) {
+            throw new \RuntimeException('Payload must be a string, an array or an instance of VoidSaleRequest');
         }
 
         $response = $this->client->sendApiRequest($payload);
