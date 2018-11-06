@@ -17,6 +17,23 @@ $ composer require chico-rei/cielo-ecommerce-v3-php
 
 Requires PHP 7.1 or newer.
 
+## Features
+
+* [x] Create Payment
+    * [x] Credit/Debit Card
+    * [x] Wallet (Visa Checkout / Masterpass / Apple Pay / Samsung Pay)
+    * [x] Boleto
+    * [x] Eletronic Transfer
+    * [x] Recurrent
+* [x] Update Payment
+    * [x] Capture
+    * [x] Void
+* [ ] Update Recurrent Payment
+* [x] Query Payment
+    * [x] By Payment ID
+    * [ ] By Order ID
+* [ ] Tokenize Card
+
 ## Testing
 
 ```bash
