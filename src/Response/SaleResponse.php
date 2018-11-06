@@ -6,7 +6,7 @@ use ChicoRei\Packages\Cielo\Model\Customer;
 use ChicoRei\Packages\Cielo\Model\Payment;
 use ChicoRei\Packages\Cielo\CieloObject;
 
-class CieloResponse extends CieloObject
+class SaleResponse extends CieloObject
 {
     /**
      * Merchant Order Id
@@ -55,9 +55,9 @@ class CieloResponse extends CieloObject
 
     /**
      * @param null|string $merchantOrderId
-     * @return CieloResponse
+     * @return SaleResponse
      */
-    public function setMerchantOrderId(?string $merchantOrderId): CieloResponse
+    public function setMerchantOrderId(?string $merchantOrderId): SaleResponse
     {
         $this->merchantOrderId = $merchantOrderId;
         return $this;
@@ -73,9 +73,9 @@ class CieloResponse extends CieloObject
 
     /**
      * @param Customer|null $customer
-     * @return CieloResponse
+     * @return SaleResponse
      */
-    public function setCustomer(?Customer $customer): CieloResponse
+    public function setCustomer(?Customer $customer): SaleResponse
     {
         $this->customer = $customer;
         return $this;
@@ -91,9 +91,9 @@ class CieloResponse extends CieloObject
 
     /**
      * @param Payment|null $payment
-     * @return CieloResponse
+     * @return SaleResponse
      */
-    public function setPayment(?Payment $payment): CieloResponse
+    public function setPayment(?Payment $payment): SaleResponse
     {
         $this->payment = $payment;
         return $this;
