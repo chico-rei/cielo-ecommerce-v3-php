@@ -2,7 +2,6 @@
 
 namespace ChicoRei\Packages\Cielo\Model;
 
-use ChicoRei\Packages\Cielo\Model\AdditionalData;
 use ChicoRei\Packages\Cielo\CieloObject;
 
 class Wallet extends CieloObject

@@ -3,8 +3,6 @@
 namespace ChicoRei\Packages\Cielo\Model;
 
 use Carbon\Carbon;
-use ChicoRei\Packages\Cielo\Model\Link;
-use ChicoRei\Packages\Cielo\Model\RecurrentTransaction;
 use ChicoRei\Packages\Cielo\CieloObject;
 
 class RecurrentPayment extends CieloObject

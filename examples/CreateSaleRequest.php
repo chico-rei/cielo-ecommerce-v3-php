@@ -9,8 +9,8 @@ use \ChicoRei\Packages\Cielo\Merchant;
 use \ChicoRei\Packages\Cielo\Util;
 
 $merchant = Merchant::fromArray([
-    'id' => 'd99f5167-4541-4023-a915-7f90a556f0b1',
-    'key' => 'WRTZDAUBHIZGBFETXKJPVFHERIHHWOYQWEMBDTDS',
+    'id' => 'ID',
+    'key' => 'KEY',
 ]);
 
 $cielo = new Cielo($merchant, true);

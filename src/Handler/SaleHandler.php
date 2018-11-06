@@ -3,9 +3,11 @@
 namespace ChicoRei\Packages\Cielo\Handler;
 
 use ChicoRei\Packages\Cielo\Client;
+use ChicoRei\Packages\Cielo\Request\CaptureSaleRequest;
 use ChicoRei\Packages\Cielo\Request\CreateSaleRequest;
 use ChicoRei\Packages\Cielo\Request\GetSaleRequest;
 use ChicoRei\Packages\Cielo\Response\SaleResponse;
+use ChicoRei\Packages\Cielo\Response\UpdateSaleResponse;
 
 class SaleHandler
 {
@@ -66,5 +68,30 @@ class SaleHandler
         $response = $this->client->sendQueryApiRequest($payload);
 
         return SaleResponse::fromArray($response);
+    }
+
+    /**
+     * Capture Sale
+     *
+     * @param string|array|CaptureSaleRequest $payload
+     * @return UpdateSaleResponse
+     * @throws \ChicoRei\Packages\Cielo\Exception\CieloAPIException
+     * @throws \ChicoRei\Packages\Cielo\Exception\CieloClientException
+     */
+    public function capture($payload): UpdateSaleResponse
+    {
+        if (is_string($payload)) {
+            $payload = CaptureSaleRequest::fromArray(['paymentId' => $payload]);
+        } elseif (is_array($payload)) {
+            $payload = CaptureSaleRequest::fromArray($payload);
+        }
+
+        if (!$payload instanceof CaptureSaleRequest) {
+            throw new \RuntimeException('Payload must be a string, an array or an instance of CaptureSaleRequest');
+        }
+
+        $response = $this->client->sendApiRequest($payload);
+
+        return UpdateSaleResponse::fromArray($response);
     }
 }

@@ -102,9 +102,11 @@ class Client
 
             $response = $this->handleResponse($exception->getResponse()) ?? [];
 
-            foreach ($response as $erro) {
-                $message = $erro['Message'];
-                $code = $erro['Code'];
+            if (is_array($response)) {
+                foreach ($response as $erro) {
+                    $message = $erro['Message'];
+                    $code = $erro['Code'];
+                }
             }
 
             throw new CieloAPIException(
