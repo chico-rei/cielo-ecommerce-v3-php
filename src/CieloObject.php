@@ -22,9 +22,10 @@ abstract class CieloObject
     public function fill(array $array = [], $overwrite = true)
     {
         foreach ($array as $key => $value) {
-            $key = lcfirst($key);
-            if (property_exists($this, $key) && ($overwrite || !isset($this->$key))) {
-                $this->$key = $value;
+            $setter = 'set'.ucfirst($key);
+
+            if (method_exists($this, $setter) && ($overwrite || !isset($this->{lcfirst($key)}))) {
+                $this->$setter($value);
             }
         }
 
