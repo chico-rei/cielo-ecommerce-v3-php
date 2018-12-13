@@ -169,7 +169,7 @@ class RecurrentPayment extends CieloObject
      * @param $array
      * @return static
      */
-    public static function fromArray(array $array = [])
+    public static function fromArray($array = [])
     {
         $nextRecurrency = $array['nextRecurrency'] ?? $array['NextRecurrency'] ?? null;
         $startDate = $array['startDate'] ?? $array['StartDate'] ?? null;

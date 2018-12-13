@@ -57,10 +57,10 @@ class Customer extends CieloObject
     public $deliveryAddress;
 
     /**
-     * @param $array
+     * @param array $array
      * @return static
      */
-    public static function fromArray(array $array = [])
+    public static function fromArray($array = [])
     {
         $birthDate = $array['birthDate'] ?? $array['BirthDate'] ?? null;
         $address = $array['address'] ?? $array['Address'] ?? null;

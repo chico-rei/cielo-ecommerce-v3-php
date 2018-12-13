@@ -35,8 +35,16 @@ abstract class CieloObject
      * @param $array
      * @return static
      */
-    public static function fromArray(array $array = [])
+    public static function fromArray($array = [])
     {
+        if ($array instanceof static) {
+            return $array;
+        }
+
+        if (! is_array($array)) {
+            throw new \InvalidArgumentException('fromArray() argument must be of the type array');
+        }
+
         return new static($array);
     }
 

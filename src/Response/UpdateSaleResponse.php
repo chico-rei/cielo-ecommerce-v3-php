@@ -88,7 +88,7 @@ class UpdateSaleResponse extends CieloObject
      * @param $array
      * @return static
      */
-    public static function fromArray(array $array = [])
+    public static function fromArray($array = [])
     {
         $links = $array['links'] ?? $array['Links'] ?? null;
 

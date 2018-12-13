@@ -65,7 +65,7 @@ class Wallet extends CieloObject
      * @param $array
      * @return static
      */
-    public static function fromArray(array $array = [])
+    public static function fromArray($array = [])
     {
         $additionalData = $array['additionalData'] ?? $array['AdditionalData'] ?? null;
 

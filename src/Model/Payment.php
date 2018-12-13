@@ -370,7 +370,7 @@ class Payment extends CieloObject
      * @param $array
      * @return static
      */
-    public static function fromArray(array $array = [])
+    public static function fromArray($array = [])
     {
         $creditCard = $array['creditCard'] ?? $array['CreditCard'] ?? null;
         $debitCard = $array['debitCard'] ?? $array['DebitCard'] ?? null;
