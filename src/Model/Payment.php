@@ -1204,9 +1204,9 @@ class Payment extends CieloObject
             'Capture' => $this->getCapture(),
             'Authenticate' => $this->getAuthenticate(),
             'Recurrent' => $this->getRecurrent(),
-            'RecurrentPayment' => isset($this->recurrentPayment) ? $this->getRecurrentPayment()->toArray() : null,
-            'CreditCard' => isset($this->creditCard) ? $this->getCreditCard()->toArray() : null,
-            'DebitCard' => isset($this->debitCard) ? $this->getDebitCard()->toArray() : null,
+            'RecurrentPayment' => $this->getRecurrentPayment() ? $this->getRecurrentPayment()->toArray() : null,
+            'CreditCard' => $this->getCreditCard() ? $this->getCreditCard()->toArray() : null,
+            'DebitCard' => $this->getDebitCard() ? $this->getDebitCard()->toArray() : null,
             'AuthenticationUrl' => $this->getAuthenticationUrl(),
             'Tid' => $this->getTid(),
             'ProofOfSale' => $this->getProofOfSale(),
@@ -1217,22 +1217,22 @@ class Payment extends CieloObject
             'PaymentId' => $this->getPaymentId(),
             'Type' => $this->getType(),
             'Amount' => $this->getAmount(),
-            'ReceivedDate' => isset($this->receivedDate) ? $this->getReceivedDate()->format('Y-m-d H:i:s') : null,
+            'ReceivedDate' => $this->getReceivedDate() ? $this->getReceivedDate()->format('Y-m-d H:i:s') : null,
             'CapturedAmount' => $this->getCapturedAmount(),
-            'CapturedDate' => isset($this->capturedDate) ? $this->getCapturedDate()->format('Y-m-d H:i:s') : null,
+            'CapturedDate' => $this->getCapturedDate() ? $this->getCapturedDate()->format('Y-m-d H:i:s') : null,
             'VoidedAmount' => $this->getVoidedAmount(),
-            'VoidedDate' => isset($this->voidedDate) ? $this->getVoidedDate()->format('Y-m-d H:i:s') : null,
+            'VoidedDate' => $this->getVoidedDate() ? $this->getVoidedDate()->format('Y-m-d H:i:s') : null,
             'Currency' => $this->getCurrency(),
             'Country' => $this->getCountry(),
             'ReturnCode' => $this->getReturnCode(),
             'ReturnMessage' => $this->getReturnMessage(),
             'Status' => $this->getStatus(),
             'IsSplitted' => $this->getisSplitted(),
-            'Links' => isset($this->links) ? array_map(function (Link $newLink) {
-                return $newLink->toArray();
+            'Links' => $this->getLinks() ? array_map(function (Link $link) {
+                return $link->toArray();
             }, $this->getLinks()) : null,
             'ExtraDataCollection' => $this->getExtraDataCollection(),
-            'ExpirationDate' => isset($this->expirationDate) ? $this->getExpirationDate()->format('Y-m-d') : null,
+            'ExpirationDate' => $this->getExpirationDate() ? $this->getExpirationDate()->format('Y-m-d') : null,
             'Url' => $this->getUrl(),
             'Number' => $this->getNumber(),
             'BoletoNumber' => $this->getBoletoNumber(),
@@ -1243,7 +1243,7 @@ class Payment extends CieloObject
             'Demonstrative' => $this->getDemonstrative(),
             'Identification' => $this->getIdentification(),
             'Instructions' => $this->getInstructions(),
-            'Wallet' => isset($this->wallet) ? $this->getWallet()->toArray() : null,
+            'Wallet' => $this->getWallet() ? $this->getWallet()->toArray() : null,
         ];
     }
 }

@@ -315,8 +315,8 @@ class UpdateSaleResponse extends CieloObject
             'Tid' => $this->getTid(),
             'ProofOfSale' => $this->getProofOfSale(),
             'AuthorizationCode' => $this->getAuthorizationCode(),
-            'Links' => isset($this->links) ? array_map(function (Link $newLink) {
-                return $newLink->toArray();
+            'Links' => $this->getLinks() ? array_map(function (Link $link) {
+                return $link->toArray();
             }, $this->getLinks()) : null,
         ];
     }

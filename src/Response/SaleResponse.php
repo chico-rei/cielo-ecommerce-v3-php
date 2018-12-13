@@ -103,8 +103,8 @@ class SaleResponse extends CieloObject
     {
         return [
             'MerchantOrderId' => $this->getMerchantOrderId(),
-            'Customer' => isset($this->customer) ? $this->getCustomer()->toArray() : null,
-            'Payment' => isset($this->payment) ? $this->getPayment()->toArray() : null,
+            'Customer' => $this->getCustomer() ? $this->getCustomer()->toArray() : null,
+            'Payment' => $this->getPayment() ? $this->getPayment()->toArray() : null,
         ];
     }
 }

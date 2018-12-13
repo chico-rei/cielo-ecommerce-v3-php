@@ -209,11 +209,11 @@ class Customer extends CieloObject
         return [
             'Name' => $this->getName(),
             'Email' => $this->getEmail(),
-            'BirthDate' => isset($this->birthDate) ? $this->getBirthDate()->format('Y-m-d') : null,
+            'BirthDate' => $this->getBirthDate() ? $this->getBirthDate()->format('Y-m-d') : null,
             'Identity' => $this->getIdentity(),
             'IdentityType' => $this->getIdentityType(),
-            'Address' => isset($this->address) ? $this->getAddress()->toArray() : null,
-            'DeliveryAddress' => isset($this->deliveryAddress) ? $this->getDeliveryAddress()->toArray() : null,
+            'Address' => $this->getAddress() ? $this->getAddress()->toArray() : null,
+            'DeliveryAddress' => $this->getDeliveryAddress() ? $this->getDeliveryAddress()->toArray() : null,
         ];
     }
 }

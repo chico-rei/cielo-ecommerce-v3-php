@@ -541,22 +541,22 @@ class RecurrentPayment extends CieloObject
         return [
             'AuthorizeNow' => $this->getAuthorizeNow(),
             'RecurrentPaymentId' => $this->getRecurrentPaymentId(),
-            'NextRecurrency' => isset($this->nextRecurrency) ? $this->getNextRecurrency()->format('Y-m-d') : null,
-            'StartDate' => isset($this->startDate) ? $this->getStartDate()->format('Y-m-d') : null,
-            'EndDate' => isset($this->endDate) ? $this->getEndDate()->format('Y-m-d') : null,
+            'NextRecurrency' => $this->getNextRecurrency() ? $this->getNextRecurrency()->format('Y-m-d') : null,
+            'StartDate' => $this->getStartDate() ? $this->getStartDate()->format('Y-m-d') : null,
+            'EndDate' => $this->getEndDate() ? $this->getEndDate()->format('Y-m-d') : null,
             'Interval' => $this->getInterval(),
             'Amount' => $this->getAmount(),
             'Country' => $this->getCountry(),
-            'CreateDate' => isset($this->createDate) ? $this->getCreateDate()->format('Y-m-dTH:i:s') : null,
+            'CreateDate' => $this->getCreateDate() ? $this->getCreateDate()->format('Y-m-dTH:i:s') : null,
             'Currency' => $this->getCurrency(),
             'CurrentRecurrencyTry' => $this->getCurrentRecurrencyTry(),
             'Provider' => $this->getProvider(),
             'RecurrencyDay' => $this->getRecurrencyDay(),
             'SuccessfulRecurrences' => $this->getSuccessfulRecurrences(),
-            'Links' => isset($this->links) ? array_map(function (Link $newLink) {
-                return $newLink->toArray();
+            'Links' => $this->getLinks() ? array_map(function (Link $link) {
+                return $link->toArray();
             }, $this->getLinks()) : null,
-            'RecurrentTransactions' => isset($this->recurrentTransactions) ?
+            'RecurrentTransactions' => $this->getRecurrentTransactions() ?
                 array_map(function (RecurrentTransaction $recurrentTransaction) {
                     return $recurrentTransaction->toArray();
                 }, $this->getRecurrentTransactions()) : null,
