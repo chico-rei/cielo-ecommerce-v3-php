@@ -37,6 +37,6 @@ class Util
      */
     public static function amountInCents(?float $amount): int
     {
-        return $amount ? intval($amount*100) : 0;
+        return $amount ? intval($amount * 100) : 0;
     }
 }

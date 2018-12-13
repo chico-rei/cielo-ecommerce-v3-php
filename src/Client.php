@@ -90,7 +90,7 @@ class Client
 
             $this->lastResponse = $this->guzzle->request(
                 $request->getMethod(),
-                $apiPath.$request->getPath(),
+                $apiPath . $request->getPath(),
                 ['json' => Util::cleanArray($payload)]
             );
 

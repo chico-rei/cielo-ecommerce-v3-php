@@ -26,8 +26,8 @@
             "@phpunit",
             "@phpcs"
         ],
-        "phpunit": "php vendor/bin/phpunit",
-        "phpcs": "php vendor/bin/phpcs"
+        "phpunit": "phpunit",
+        "phpcs": "phpcs"
     },
     "autoload": {
         "psr-4": {

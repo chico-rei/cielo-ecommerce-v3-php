@@ -105,7 +105,7 @@ abstract class UpdateSaleRequest extends CieloObject implements IRequest
             $params['serviceTaxAmount'] = $this->getServiceTaxAmount();
         }
 
-        return count($params) > 0 ? '?'.http_build_query($params) : '';
+        return count($params) > 0 ? '?' . http_build_query($params) : '';
     }
 
     /**

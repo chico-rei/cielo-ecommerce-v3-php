@@ -60,8 +60,8 @@ class Merchant extends CieloObject
     public function toArray(): array
     {
         return [
-          'id' => $this->getId(),
-          'key' => $this->getKey(),
+            'id' => $this->getId(),
+            'key' => $this->getKey(),
         ];
     }
 }

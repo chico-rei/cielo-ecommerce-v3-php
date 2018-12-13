@@ -173,7 +173,7 @@ class Wallet extends CieloObject
             'WalletKey' => $this->getWalletKey(),
             'Eci' => $this->getEci(),
             'Cavv' => $this->getCavv(),
-            'AdditionalData' => isset($this->additionalData) ?  $this->getAdditionalData()->toArray() : null,
+            'AdditionalData' => isset($this->additionalData) ? $this->getAdditionalData()->toArray() : null,
         ];
     }
 }

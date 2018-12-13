@@ -317,6 +317,7 @@ class UpdateSaleResponse extends CieloObject
             'AuthorizationCode' => $this->getAuthorizationCode(),
             'Links' => isset($this->links) ? array_map(function (Link $newLink) {
                 return $newLink->toArray();
-            }, $this->getLinks()) : null,];
+            }, $this->getLinks()) : null,
+        ];
     }
 }
