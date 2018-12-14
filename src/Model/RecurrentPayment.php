@@ -547,7 +547,7 @@ class RecurrentPayment extends CieloObject
             'Interval' => $this->getInterval(),
             'Amount' => $this->getAmount(),
             'Country' => $this->getCountry(),
-            'CreateDate' => $this->getCreateDate() ? $this->getCreateDate()->format('Y-m-dTH:i:s') : null,
+            'CreateDate' => $this->getCreateDate() ? $this->getCreateDate()->format('Y-m-d\TH:i:s') : null,
             'Currency' => $this->getCurrency(),
             'CurrentRecurrencyTry' => $this->getCurrentRecurrencyTry(),
             'Provider' => $this->getProvider(),
