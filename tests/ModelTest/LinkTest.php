@@ -8,11 +8,6 @@ use PHPUnit\Framework\TestCase;
 class LinkTest extends TestCase
 {
     /**
-     * @var Link
-     */
-    private static $link;
-
-    /**
      * Link Test Data
      * @return array
      */
@@ -25,13 +20,9 @@ class LinkTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$link = Link::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$link->toArray());
+        $link = Link::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $link->toArray());
     }
 }

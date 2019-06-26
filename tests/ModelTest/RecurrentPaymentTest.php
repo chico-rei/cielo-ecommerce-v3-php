@@ -12,11 +12,6 @@ use PHPUnit\Framework\TestCase;
 class RecurrentPaymentTest extends TestCase
 {
     /**
-     * @var RecurrentPayment
-     */
-    private static $recurrentPayment;
-
-    /**
      * RecurrentPayment Test Data
      * @return array
      */
@@ -51,52 +46,54 @@ class RecurrentPaymentTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$recurrentPayment->toArray());
+        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $recurrentPayment->toArray());
     }
 
     public function testGetNextRecurrency()
     {
-        $this->assertInstanceOf(Carbon::class, static::$recurrentPayment->getNextRecurrency());
+        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $this->assertInstanceOf(Carbon::class, $recurrentPayment->getNextRecurrency());
     }
 
     public function testGetStartDate()
     {
-        $this->assertInstanceOf(Carbon::class, static::$recurrentPayment->getStartDate());
+        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $this->assertInstanceOf(Carbon::class, $recurrentPayment->getStartDate());
     }
 
     public function testGetEndDate()
     {
-        $this->assertInstanceOf(Carbon::class, static::$recurrentPayment->getEndDate());
+        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $this->assertInstanceOf(Carbon::class, $recurrentPayment->getEndDate());
     }
 
     public function testGetCreateDate()
     {
-        $this->assertInstanceOf(Carbon::class, static::$recurrentPayment->getCreateDate());
+        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $this->assertInstanceOf(Carbon::class, $recurrentPayment->getCreateDate());
     }
 
     public function testGetLinks()
     {
-        $this->assertInternalType('array', static::$recurrentPayment->getLinks());
-        $this->assertCount(2, static::$recurrentPayment->getLinks());
+        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $this->assertInternalType('array', $recurrentPayment->getLinks());
+        $this->assertCount(2, $recurrentPayment->getLinks());
 
-        foreach (static::$recurrentPayment->getLinks() as $link) {
+        foreach ($recurrentPayment->getLinks() as $link) {
             $this->assertInstanceOf(Link::class, $link);
         }
     }
 
     public function testGetRecurrentTransactions()
     {
-        $this->assertInternalType('array', static::$recurrentPayment->getRecurrentTransactions());
-        $this->assertCount(2, static::$recurrentPayment->getRecurrentTransactions());
+        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $this->assertInternalType('array', $recurrentPayment->getRecurrentTransactions());
+        $this->assertCount(2, $recurrentPayment->getRecurrentTransactions());
 
-        foreach (static::$recurrentPayment->getRecurrentTransactions() as $recurrentTransactions) {
+        foreach ($recurrentPayment->getRecurrentTransactions() as $recurrentTransactions) {
             $this->assertInstanceOf(RecurrentTransaction::class, $recurrentTransactions);
         }
     }

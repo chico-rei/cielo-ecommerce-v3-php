@@ -9,11 +9,6 @@ use PHPUnit\Framework\TestCase;
 class WalletTest extends TestCase
 {
     /**
-     * @var Wallet
-     */
-    private static $wallet;
-
-    /**
      * Wallet Test Data
      * @return array
      */
@@ -28,18 +23,15 @@ class WalletTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$wallet = Wallet::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$wallet->toArray());
+        $wallet = Wallet::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $wallet->toArray());
     }
 
     public function testGetAdditionalData()
     {
-        $this->assertInstanceOf(AdditionalData::class, static::$wallet->getAdditionalData());
+        $wallet = Wallet::fromArray(static::getTestData());
+        $this->assertInstanceOf(AdditionalData::class, $wallet->getAdditionalData());
     }
 }

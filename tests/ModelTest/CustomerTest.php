@@ -10,11 +10,6 @@ use PHPUnit\Framework\TestCase;
 class CustomerTest extends TestCase
 {
     /**
-     * @var Customer
-     */
-    private static $customer;
-
-    /**
      * Customer Test Data
      * @return array
      */
@@ -31,29 +26,28 @@ class CustomerTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$customer = Customer::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$customer->toArray());
+        $customer = Customer::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $customer->toArray());
     }
 
     public function testGetBirthDate()
     {
-        $this->assertInstanceOf(Carbon::class, static::$customer->getBirthDate());
+        $customer = Customer::fromArray(static::getTestData());
+        $this->assertInstanceOf(Carbon::class, $customer->getBirthDate());
     }
 
     public function testGetAddress()
     {
-        $this->assertInstanceOf(Address::class, static::$customer->getAddress());
+        $customer = Customer::fromArray(static::getTestData());
+        $this->assertInstanceOf(Address::class, $customer->getAddress());
     }
 
     public function testGetDeliveryAddress()
     {
-        $this->assertInstanceOf(Address::class, static::$customer->getDeliveryAddress());
-        $this->assertNotSame(static::$customer->getAddress(), static::$customer->getDeliveryAddress());
+        $customer = Customer::fromArray(static::getTestData());
+        $this->assertInstanceOf(Address::class, $customer->getDeliveryAddress());
+        $this->assertNotSame($customer->getAddress(), $customer->getDeliveryAddress());
     }
 }

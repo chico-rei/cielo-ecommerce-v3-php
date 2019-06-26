@@ -8,11 +8,6 @@ use PHPUnit\Framework\TestCase;
 class RecurrentTransactionTest extends TestCase
 {
     /**
-     * @var RecurrentTransaction
-     */
-    private static $recurrentTransaction;
-
-    /**
      * RecurrentTransaction Test Data
      * @return array
      */
@@ -25,13 +20,9 @@ class RecurrentTransactionTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$recurrentTransaction = RecurrentTransaction::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$recurrentTransaction->toArray());
+        $recurrentTransaction = RecurrentTransaction::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $recurrentTransaction->toArray());
     }
 }

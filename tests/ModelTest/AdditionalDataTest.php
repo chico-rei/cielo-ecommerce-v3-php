@@ -8,11 +8,6 @@ use PHPUnit\Framework\TestCase;
 class AdditionalDataTest extends TestCase
 {
     /**
-     * @var AdditionalData
-     */
-    private static $additionalData;
-
-    /**
      * AdditionalData Test Data
      * @return array
      */
@@ -24,13 +19,9 @@ class AdditionalDataTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$additionalData = AdditionalData::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$additionalData->toArray());
+        $additionalData = AdditionalData::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $additionalData->toArray());
     }
 }

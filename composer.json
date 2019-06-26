@@ -2,7 +2,7 @@
     "name": "chico-rei/cielo-ecommerce-v3-php",
     "type": "library",
     "description": "chico-rei",
-    "keywords": ["Cielo", "Ecommercer", "API", "v3"],
+    "keywords": ["Cielo", "Ecommerce", "API", "v3"],
     "homepage": "https://github.com/chico-rei/cielo-ecommerce-v3-php",
     "license": "MIT",
     "version": "0.1",

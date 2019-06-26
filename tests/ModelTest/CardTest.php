@@ -8,11 +8,6 @@ use PHPUnit\Framework\TestCase;
 class CardTest extends TestCase
 {
     /**
-     * @var Card
-     */
-    private static $card;
-
-    /**
      * Card Test Data
      * @return array
      */
@@ -30,13 +25,9 @@ class CardTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$card = Card::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$card->toArray());
+        $card = Card::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $card->toArray());
     }
 }

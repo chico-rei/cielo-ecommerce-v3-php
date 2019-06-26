@@ -8,11 +8,6 @@ use PHPUnit\Framework\TestCase;
 class AddressTest extends TestCase
 {
     /**
-     * @var Address
-     */
-    private static $address;
-
-    /**
      * Address Test Data
      * @return array
      */
@@ -30,13 +25,9 @@ class AddressTest extends TestCase
         ];
     }
 
-    public static function setUpBeforeClass()
-    {
-        static::$address = Address::fromArray(static::getTestData());
-    }
-
     public function testToArray()
     {
-        $this->assertEquals(static::getTestData(), static::$address->toArray());
+        $address = Address::fromArray(static::getTestData());
+        $this->assertEquals(static::getTestData(), $address->toArray());
     }
 }
