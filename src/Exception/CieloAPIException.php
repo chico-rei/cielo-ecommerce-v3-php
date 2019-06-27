@@ -25,8 +25,8 @@ class CieloAPIException extends \Exception
      * @param Response|null $response
      */
     public function __construct(
-        string $message = "",
-        string $code = "0",
+        string $message = '',
+        string $code = '0',
         ?Request $request = null,
         ?Response $response = null
     ) {

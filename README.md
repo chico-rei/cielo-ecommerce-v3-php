@@ -34,6 +34,49 @@ Requires PHP 7.1 or newer.
     * [ ] By Order ID
 * [ ] Tokenize Card
 
+## Usage
+
+```php
+use \ChicoRei\Packages\Cielo\Cielo;
+use \ChicoRei\Packages\Cielo\Merchant;
+use \ChicoRei\Packages\Cielo\Util;
+
+$merchant = Merchant::create([
+    'id' => 'Your_ID',
+    'key' => 'Your_KEY',
+]);
+
+$cielo = new Cielo($merchant); // For sandbox use: new Cielo($merchant, true);
+
+try {
+    $response = $cielo->sale()->create([
+        'merchantOrderId' => '19800731',
+        'payment' => [
+            'type' => 'CreditCard',
+            'amount' => 15700, // 157,00
+            'installments' => 2,
+            'softDescriptor' => 'Your Company',
+            'capture' => true,
+            'creditCard' => [
+                'cardNumber' => '4551870000000000',
+                'holder' => 'Name',
+                'expirationDate' => '12/2021',
+                'securityCode' => '123',
+                'brand' => 'Visa'
+            ]
+        ]
+    ]);
+    
+    $response->getPayment()->getStatus(); // Transaction Status
+} catch (CieloAPIException $e) {
+    // Handle API errors (or validation errors)
+} catch (Exception $e) {
+   // Handle exceptions
+}
+```
+
+See [examples](examples) for more.
+
 ## Testing
 
 ```bash

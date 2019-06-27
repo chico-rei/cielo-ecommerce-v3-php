@@ -5,7 +5,6 @@
     "keywords": ["Cielo", "Ecommerce", "API", "v3"],
     "homepage": "https://github.com/chico-rei/cielo-ecommerce-v3-php",
     "license": "MIT",
-    "version": "0.1",
     "authors": [{
         "name": "Chico Rei",
         "email": "php@chicorei.com.br"

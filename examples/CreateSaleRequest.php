@@ -17,19 +17,19 @@ $cielo = new Cielo($merchant, true);
 
 try {
     $response = $cielo->sale()->create([
-        "MerchantOrderId" => "2014111703",
-        "Payment" => [
-            "Type" => "CreditCard",
-            "Amount" => 15700,
-            "Installments" => 1,
-            "SoftDescriptor" => "123456789ABCD",
-            "Capture" => true,
-            "CreditCard" => [
-                "CardNumber" => "4551870000000181",
-                "Holder" => "Teste Holder",
-                "ExpirationDate" => "12/2021",
-                "SecurityCode" => "123",
-                "Brand" => "Visa"
+        'MerchantOrderId' => '2014111703',
+        'Payment' => [
+            'Type' => 'CreditCard',
+            'Amount' => 15700,
+            'Installments' => 1,
+            'SoftDescriptor' => '123456789ABCD',
+            'Capture' => true,
+            'CreditCard' => [
+                'CardNumber' => '4551870000000181',
+                'Holder' => 'Teste Holder',
+                'ExpirationDate' => '12/2021',
+                'SecurityCode' => '123',
+                'Brand' => 'Visa'
             ]
         ]
     ]);
