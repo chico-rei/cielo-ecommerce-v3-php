@@ -9,26 +9,26 @@ class Link extends CieloObject
     /**
      * Method
      *
-     * @var null|string
+     * @var string|null
      */
     public $method;
 
     /**
      * Rel
      *
-     * @var null|string
+     * @var string|null
      */
     public $rel;
 
     /**
      * Href
      *
-     * @var null|string
+     * @var string|null
      */
     public $href;
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getMethod(): ?string
     {
@@ -36,7 +36,7 @@ class Link extends CieloObject
     }
 
     /**
-     * @param null|string $method
+     * @param string|null $method
      * @return Link
      */
     public function setMethod(?string $method): Link
@@ -46,7 +46,7 @@ class Link extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getRel(): ?string
     {
@@ -54,7 +54,7 @@ class Link extends CieloObject
     }
 
     /**
-     * @param null|string $rel
+     * @param string|null $rel
      * @return Link
      */
     public function setRel(?string $rel): Link
@@ -64,7 +64,7 @@ class Link extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getHref(): ?string
     {
@@ -72,7 +72,7 @@ class Link extends CieloObject
     }
 
     /**
-     * @param null|string $href
+     * @param string|null $href
      * @return Link
      */
     public function setHref(?string $href): Link

@@ -35,133 +35,133 @@ class RecurrentPayment extends CieloObject
     /**
      * Authorize Now
      *
-     * @var null|bool
+     * @var bool|null
      */
     public $authorizeNow;
 
     /**
      * Recurrent Payment ID
      *
-     * @var null|string
+     * @var string|null
      */
     public $recurrentPaymentId;
 
     /**
      * Next Recurrency
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $nextRecurrency;
 
     /**
      * Start Date
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $startDate;
 
     /**
      * End Date
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $endDate;
 
     /**
      * Interval
      *
-     * @var null|string
+     * @var string|null
      */
     public $interval;
 
     /**
      * Amount
      *
-     * @var null|int
+     * @var int|null
      */
     public $amount;
 
     /**
      * Country
      *
-     * @var null|string
+     * @var string|null
      */
     public $country;
 
     /**
      * Create Date
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $createDate;
 
     /**
      * Currency
      *
-     * @var null|string
+     * @var string|null
      */
     public $currency;
 
     /**
      * Current Recurrency Try
      *
-     * @var null|int
+     * @var int|null
      */
     public $currentRecurrencyTry;
 
     /**
      * Provider
      *
-     * @var null|string
+     * @var string|null
      */
     public $provider;
 
     /**
      * Recurrency Day
      *
-     * @var null|int
+     * @var int|null
      */
     public $recurrencyDay;
 
     /**
      * Successful Recurrences
      *
-     * @var null|int
+     * @var int|null
      */
     public $successfulRecurrences;
 
     /**
      * Links
      *
-     * @var null|Link[]
+     * @var Link[]|null
      */
     public $links;
 
     /**
      * Recurrent Transactions
      *
-     * @var null|RecurrentTransaction[]
+     * @var RecurrentTransaction[]|null
      */
     public $recurrentTransactions;
 
     /**
      * Reason Code
      *
-     * @var null|int
+     * @var int|null
      */
     public $reasonCode;
 
     /**
      * Reason Message
      *
-     * @var null|string
+     * @var string|null
      */
     public $reasonMessage;
 
     /**
      * Status
      *
-     * @var null|int
+     * @var int|null
      */
     public $status;
 
@@ -213,7 +213,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getRecurrentPaymentId(): ?string
     {
@@ -221,7 +221,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param null|string $recurrentPaymentId
+     * @param string|null $recurrentPaymentId
      * @return RecurrentPayment
      */
     public function setRecurrentPaymentId(?string $recurrentPaymentId): RecurrentPayment
@@ -285,7 +285,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getInterval(): ?string
     {
@@ -293,7 +293,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param null|string $interval
+     * @param string|null $interval
      * @return RecurrentPayment
      */
     public function setInterval(?string $interval): RecurrentPayment
@@ -321,7 +321,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCountry(): ?string
     {
@@ -329,7 +329,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param null|string $country
+     * @param string|null $country
      * @return RecurrentPayment
      */
     public function setCountry(?string $country): RecurrentPayment
@@ -357,7 +357,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCurrency(): ?string
     {
@@ -365,7 +365,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param null|string $currency
+     * @param string|null $currency
      * @return RecurrentPayment
      */
     public function setCurrency(?string $currency): RecurrentPayment
@@ -393,7 +393,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getProvider(): ?string
     {
@@ -401,7 +401,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param null|string $provider
+     * @param string|null $provider
      * @return RecurrentPayment
      */
     public function setProvider(?string $provider): RecurrentPayment
@@ -501,7 +501,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReasonMessage(): ?string
     {
@@ -509,7 +509,7 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param null|string $reasonMessage
+     * @param string|null $reasonMessage
      * @return RecurrentPayment
      */
     public function setReasonMessage(?string $reasonMessage): RecurrentPayment

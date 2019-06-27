@@ -29,35 +29,35 @@ class Wallet extends CieloObject
     /**
      * Type
      *
-     * @var null|string
+     * @var string|null
      */
     public $type;
 
     /**
      * Wallet Key
      *
-     * @var null|string
+     * @var string|null
      */
     public $walletKey;
 
     /**
      * ECI
      *
-     * @var null|int
+     * @var int|null
      */
     public $eci;
 
     /**
      * CAVV
      *
-     * @var null|string
+     * @var string|null
      */
     public $cavv;
 
     /**
      * Additional Data
      *
-     * @var null|AdditionalData
+     * @var AdditionalData|null
      */
     public $additionalData;
 
@@ -77,7 +77,7 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getType(): ?string
     {
@@ -85,7 +85,7 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @param null|string $type
+     * @param string|null $type
      * @return Wallet
      */
     public function setType(?string $type): Wallet
@@ -95,7 +95,7 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getWalletKey(): ?string
     {
@@ -103,7 +103,7 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @param null|string $walletKey
+     * @param string|null $walletKey
      * @return Wallet
      */
     public function setWalletKey(?string $walletKey): Wallet
@@ -131,7 +131,7 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCavv(): ?string
     {
@@ -139,7 +139,7 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @param null|string $cavv
+     * @param string|null $cavv
      * @return Wallet
      */
     public function setCavv(?string $cavv): Wallet

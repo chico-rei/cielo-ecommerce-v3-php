@@ -124,7 +124,7 @@ class Client
      * Decode the Response
      *
      * @param ResponseInterface $response
-     * @return null|array
+     * @return array|null
      */
     public function handleResponse(ResponseInterface $response): ?array
     {

@@ -54,61 +54,61 @@ class Card extends CieloObject
     /**
      * Credit card number
      *
-     * @var null|string
+     * @var string|null
      */
     public $cardNumber;
 
     /**
      * Credit card holder
      *
-     * @var null|string
+     * @var string|null
      */
     public $holder;
 
     /**
      * Credit card expiration date
      *
-     * @var null|string
+     * @var string|null
      */
     public $expirationDate;
 
     /**
      * Credit card security code
      *
-     * @var null|string
+     * @var string|null
      */
     public $securityCode;
 
     /**
      * Save Card
      *
-     * @var null|bool
+     * @var bool|null
      */
     public $saveCard;
 
     /**
      * Credit card brand
      *
-     * @var null|string
+     * @var string|null
      */
     public $brand;
 
     /**
      * Credit card token
      *
-     * @var null|string
+     * @var string|null
      */
     public $cardToken;
 
     /**
      * Credit card customer name
      *
-     * @var null|string
+     * @var string|null
      */
     public $customerName;
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCardNumber(): ?string
     {
@@ -116,7 +116,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @param null|string $cardNumber
+     * @param string|null $cardNumber
      * @return Card
      */
     public function setCardNumber(?string $cardNumber): Card
@@ -126,7 +126,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getHolder(): ?string
     {
@@ -134,7 +134,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @param null|string $holder
+     * @param string|null $holder
      * @return Card
      */
     public function setHolder(?string $holder): Card
@@ -144,7 +144,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getExpirationDate(): ?string
     {
@@ -152,7 +152,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @param null|string $expirationDate
+     * @param string|null $expirationDate
      * @return Card
      */
     public function setExpirationDate(?string $expirationDate): Card
@@ -162,7 +162,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getSecurityCode(): ?string
     {
@@ -170,7 +170,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @param null|string $securityCode
+     * @param string|null $securityCode
      * @return Card
      */
     public function setSecurityCode(?string $securityCode): Card
@@ -198,7 +198,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getBrand(): ?string
     {
@@ -206,7 +206,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @param null|string $brand
+     * @param string|null $brand
      * @return Card
      */
     public function setBrand(?string $brand): Card
@@ -216,7 +216,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCardToken(): ?string
     {
@@ -224,7 +224,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @param null|string $cardToken
+     * @param string|null $cardToken
      * @return Card
      */
     public function setCardToken(?string $cardToken): Card
@@ -234,7 +234,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCustomerName(): ?string
     {
@@ -242,7 +242,7 @@ class Card extends CieloObject
     }
 
     /**
-     * @param null|string $customerName
+     * @param string|null $customerName
      * @return Card
      */
     public function setCustomerName(?string $customerName): Card

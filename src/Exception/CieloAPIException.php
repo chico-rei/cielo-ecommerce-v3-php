@@ -8,12 +8,12 @@ use GuzzleHttp\Psr7\Response;
 class CieloAPIException extends \Exception
 {
     /**
-     * @var null|Request
+     * @var Request|null
      */
     private $request;
 
     /**
-     * @var null|Response
+     * @var Response|null
      */
     private $response;
 
@@ -38,7 +38,7 @@ class CieloAPIException extends \Exception
     }
 
     /**
-     * @return null|Request
+     * @return Request|null
      */
     public function getRequest(): ?Request
     {
@@ -46,7 +46,7 @@ class CieloAPIException extends \Exception
     }
 
     /**
-     * @return null|Response
+     * @return Response|null
      */
     public function getResponse(): ?Response
     {

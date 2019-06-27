@@ -10,12 +10,12 @@ class GetSaleRequest extends CieloObject implements IRequest
     /**
      * Payment ID
      *
-     * @var null|string
+     * @var string|null
      */
     public $paymentId;
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getPaymentId(): ?string
     {
@@ -23,7 +23,7 @@ class GetSaleRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @param null|string $paymentId
+     * @param string|null $paymentId
      * @return GetSaleRequest
      */
     public function setPaymentId(?string $paymentId): GetSaleRequest
@@ -49,7 +49,7 @@ class GetSaleRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @return null|array
+     * @return array|null
      */
     public function getPayload(): ?array
     {

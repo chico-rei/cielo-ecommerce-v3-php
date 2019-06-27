@@ -10,77 +10,77 @@ class UpdateSaleResponse extends CieloObject
     /**
      * Status
      *
-     * @var null|int
+     * @var int|null
      */
     public $status;
 
     /**
      * Reason code
      *
-     * @var null|int
+     * @var int|null
      */
     public $reasonCode;
 
     /**
      * Reason message
      *
-     * @var null|string
+     * @var string|null
      */
     public $reasonMessage;
 
     /**
      * Provider return code
      *
-     * @var null|int
+     * @var int|null
      */
     public $providerReturnCode;
 
     /**
      * Reason Message
      *
-     * @var null|string
+     * @var string|null
      */
     public $providerReturnMessage;
 
     /**
      * Return Code
      *
-     * @var null|string
+     * @var string|null
      */
     public $returnCode;
 
     /**
      * Return Message
      *
-     * @var null|string
+     * @var string|null
      */
     public $returnMessage;
 
     /**
      * TID
      *
-     * @var null|string
+     * @var string|null
      */
     public $tid;
 
     /**
      * Proof of sale
      *
-     * @var null|string
+     * @var string|null
      */
     public $proofOfSale;
 
     /**
      * Authorization Code
      *
-     * @var null|string
+     * @var string|null
      */
     public $authorizationCode;
 
     /**
      * Links
      *
-     * @var null|Link[]
+     * @var Link[]|null
      */
     public $links;
 
@@ -138,7 +138,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReasonMessage(): ?string
     {
@@ -146,7 +146,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $reasonMessage
+     * @param string|null $reasonMessage
      * @return UpdateSaleResponse
      */
     public function setReasonMessage(?string $reasonMessage): UpdateSaleResponse
@@ -174,7 +174,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getProviderReturnMessage(): ?string
     {
@@ -182,7 +182,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $providerReturnMessage
+     * @param string|null $providerReturnMessage
      * @return UpdateSaleResponse
      */
     public function setProviderReturnMessage(?string $providerReturnMessage): UpdateSaleResponse
@@ -192,7 +192,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReturnCode(): ?string
     {
@@ -200,7 +200,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $returnCode
+     * @param string|null $returnCode
      * @return UpdateSaleResponse
      */
     public function setReturnCode(?string $returnCode): UpdateSaleResponse
@@ -210,7 +210,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReturnMessage(): ?string
     {
@@ -218,7 +218,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $returnMessage
+     * @param string|null $returnMessage
      * @return UpdateSaleResponse
      */
     public function setReturnMessage(?string $returnMessage): UpdateSaleResponse
@@ -228,7 +228,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getTid(): ?string
     {
@@ -236,7 +236,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $tid
+     * @param string|null $tid
      * @return UpdateSaleResponse
      */
     public function setTid(?string $tid): UpdateSaleResponse
@@ -246,7 +246,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getProofOfSale(): ?string
     {
@@ -254,7 +254,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $proofOfSale
+     * @param string|null $proofOfSale
      * @return UpdateSaleResponse
      */
     public function setProofOfSale(?string $proofOfSale): UpdateSaleResponse
@@ -264,7 +264,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAuthorizationCode(): ?string
     {
@@ -272,7 +272,7 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $authorizationCode
+     * @param string|null $authorizationCode
      * @return UpdateSaleResponse
      */
     public function setAuthorizationCode(?string $authorizationCode): UpdateSaleResponse

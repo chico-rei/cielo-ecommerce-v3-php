@@ -9,61 +9,61 @@ class Address extends CieloObject
     /**
      * Street
      *
-     * @var null|string
+     * @var string|null
      */
     public $street;
 
     /**
      * Number
      *
-     * @var null|string
+     * @var string|null
      */
     public $number;
 
     /**
      * Complement
      *
-     * @var null|string
+     * @var string|null
      */
     public $complement;
 
     /**
      * Zip Code
      *
-     * @var null|string
+     * @var string|null
      */
     public $zipCode;
 
     /**
      * City
      *
-     * @var null|string
+     * @var string|null
      */
     public $city;
 
     /**
      * State
      *
-     * @var null|string
+     * @var string|null
      */
     public $state;
 
     /**
      * Country
      *
-     * @var null|string
+     * @var string|null
      */
     public $country;
 
     /**
      * District
      *
-     * @var null|string
+     * @var string|null
      */
     public $district;
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getStreet(): ?string
     {
@@ -71,7 +71,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $street
+     * @param string|null $street
      * @return Address
      */
     public function setStreet(?string $street): Address
@@ -81,7 +81,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getNumber(): ?string
     {
@@ -89,7 +89,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $number
+     * @param string|null $number
      * @return Address
      */
     public function setNumber(?string $number): Address
@@ -99,7 +99,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getComplement(): ?string
     {
@@ -107,7 +107,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $complement
+     * @param string|null $complement
      * @return Address
      */
     public function setComplement(?string $complement): Address
@@ -117,7 +117,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getZipCode(): ?string
     {
@@ -125,7 +125,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $zipCode
+     * @param string|null $zipCode
      * @return Address
      */
     public function setZipCode(?string $zipCode): Address
@@ -135,7 +135,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCity(): ?string
     {
@@ -143,7 +143,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $city
+     * @param string|null $city
      * @return Address
      */
     public function setCity(?string $city): Address
@@ -153,7 +153,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getState(): ?string
     {
@@ -161,7 +161,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $state
+     * @param string|null $state
      * @return Address
      */
     public function setState(?string $state): Address
@@ -171,7 +171,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCountry(): ?string
     {
@@ -179,7 +179,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $country
+     * @param string|null $country
      * @return Address
      */
     public function setCountry(?string $country): Address
@@ -189,7 +189,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getDistrict(): ?string
     {
@@ -197,7 +197,7 @@ class Address extends CieloObject
     }
 
     /**
-     * @param null|string $district
+     * @param string|null $district
      * @return Address
      */
     public function setDistrict(?string $district): Address

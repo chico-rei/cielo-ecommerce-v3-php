@@ -12,21 +12,21 @@ abstract class CieloRequest extends CieloObject implements IRequest
     /**
      * Merchant Order Id
      *
-     * @var null|string
+     * @var string|null
      */
     public $merchantOrderId;
 
     /**
      * Customer
      *
-     * @var null|Customer
+     * @var Customer|null
      */
     public $customer;
 
     /**
      * Payment
      *
-     * @var null|Payment
+     * @var Payment|null
      */
     public $payment;
 
@@ -47,7 +47,7 @@ abstract class CieloRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getMerchantOrderId(): ?string
     {
@@ -55,7 +55,7 @@ abstract class CieloRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @param null|string $merchantOrderId
+     * @param string|null $merchantOrderId
      * @return static
      */
     public function setMerchantOrderId(?string $merchantOrderId)
@@ -92,7 +92,7 @@ abstract class CieloRequest extends CieloObject implements IRequest
 
     /**
      * @param Payment|null $payment
-     * @return static
+     * @return $this
      */
     public function setPayment(?Payment $payment)
     {
@@ -101,7 +101,7 @@ abstract class CieloRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @return null|array
+     * @return array|null
      */
     public function getPayload(): ?array
     {

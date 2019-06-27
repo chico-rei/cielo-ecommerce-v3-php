@@ -60,91 +60,91 @@ class Payment extends CieloObject
     /**
      * Service tax amount
      *
-     * @var null|int
+     * @var int|null
      */
     public $serviceTaxAmount;
 
     /**
      * Installments
      *
-     * @var null|int
+     * @var int|null
      */
     public $installments;
 
     /**
      * Interest
      *
-     * @var null|string
+     * @var string|null
      */
     public $interest;
 
     /**
      * Capture
      *
-     * @var null|bool
+     * @var bool|null
      */
     public $capture;
 
     /**
      * Authenticate
      *
-     * @var null|bool
+     * @var bool|null
      */
     public $authenticate;
 
     /**
      * Recurrent
      *
-     * @var null|bool
+     * @var bool|null
      */
     public $recurrent;
 
     /**
      * Recurrent Payment
      *
-     * @var null|RecurrentPayment
+     * @var RecurrentPayment|null
      */
     public $recurrentPayment;
 
     /**
      * Credit Card
      *
-     * @var null|Card
+     * @var Card|null
      */
     public $creditCard;
 
     /**
      * Debit Card
      *
-     * @var null|Card
+     * @var Card|null
      */
     public $debitCard;
 
     /**
      * Authentication URL
      *
-     * @var null|string
+     * @var string|null
      */
     public $authenticationUrl;
 
     /**
      * TID
      *
-     * @var null|string
+     * @var string|null
      */
     public $tid;
 
     /**
      * Proof Of Sale
      *
-     * @var null|string
+     * @var string|null
      */
     public $proofOfSale;
 
     /**
      * Authorization Code
      *
-     * @var null|string
+     * @var string|null
      */
     public $authorizationCode;
 
@@ -152,217 +152,217 @@ class Payment extends CieloObject
     /**
      * SoftDescriptor
      *
-     * @var null|string
+     * @var string|null
      */
     public $softDescriptor;
 
     /**
      * Return URL
      *
-     * @var null|string
+     * @var string|null
      */
     public $returnUrl;
 
     /**
      * Provider
      *
-     * @var null|string
+     * @var string|null
      */
     public $provider;
 
     /**
      * Payment ID
      *
-     * @var null|string
+     * @var string|null
      */
     public $paymentId;
 
     /**
      * Type
      *
-     * @var null|string
+     * @var string|null
      */
     public $type;
 
     /**
      * Amount
      *
-     * @var null|int
+     * @var int|null
      */
     public $amount;
 
     /**
      * Authentication URL
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $receivedDate;
 
     /**
      * Amount
      *
-     * @var null|int
+     * @var int|null
      */
     public $capturedAmount;
 
     /**
      * Captured Date
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $capturedDate;
 
     /**
      * Voided Amount
      *
-     * @var null|int
+     * @var int|null
      */
     public $voidedAmount;
 
     /**
      * Voided Date
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $voidedDate;
 
     /**
      * Currency
      *
-     * @var null|string
+     * @var string|null
      */
     public $currency;
 
     /**
      * Country
      *
-     * @var null|string
+     * @var string|null
      */
     public $country;
 
     /**
      * Return Code
      *
-     * @var null|string
+     * @var string|null
      */
     public $returnCode;
 
     /**
      * Return Message
      *
-     * @var null|string
+     * @var string|null
      */
     public $returnMessage;
 
     /**
      * Status
      *
-     * @var null|int
+     * @var int|null
      */
     public $status;
 
     /**
      * Is Splitted
      *
-     * @var null|bool
+     * @var bool|null
      */
     public $isSplitted;
 
     /**
      * Links
      *
-     * @var null|Link[]
+     * @var Link[]|null
      */
     public $links;
 
     /**
      * Extra Data Collection
      *
-     * @var null|array
+     * @var array|null
      */
     public $extraDataCollection;
 
     /**
      * Expiration Date
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $expirationDate;
 
     /**
      * URL
      *
-     * @var null|string
+     * @var string|null
      */
     public $url;
 
     /**
      * Number
      *
-     * @var null|string
+     * @var string|null
      */
     public $number;
 
     /**
      * Boleto Number
      *
-     * @var null|string
+     * @var string|null
      */
     public $boletoNumber;
 
     /**
      * Bar Code Number
      *
-     * @var null|string
+     * @var string|null
      */
     public $barCodeNumber;
 
     /**
      * Digitable Line
      *
-     * @var null|string
+     * @var string|null
      */
     public $digitableLine;
 
     /**
      * Address
      *
-     * @var null|string
+     * @var string|null
      */
     public $address;
 
     /**
      * Assignor
      *
-     * @var null|string
+     * @var string|null
      */
     public $assignor;
 
     /**
      * Demonstrative
      *
-     * @var null|string
+     * @var string|null
      */
     public $demonstrative;
 
     /**
      * Identification
      *
-     * @var null|string
+     * @var string|null
      */
     public $identification;
 
     /**
      * Instructions
      *
-     * @var null|string
+     * @var string|null
      */
     public $instructions;
 
     /**
      * Wallet
      *
-     * @var null|Wallet
+     * @var Wallet|null
      */
     public $wallet;
 
@@ -437,7 +437,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getInterest(): ?string
     {
@@ -445,7 +445,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $interest
+     * @param string|null $interest
      * @return Payment
      */
     public function setInterest(?string $interest): Payment
@@ -563,7 +563,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAuthenticationUrl(): ?string
     {
@@ -571,7 +571,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $authenticationUrl
+     * @param string|null $authenticationUrl
      * @return Payment
      */
     public function setAuthenticationUrl(?string $authenticationUrl): Payment
@@ -581,7 +581,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getTid(): ?string
     {
@@ -589,7 +589,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $tid
+     * @param string|null $tid
      * @return Payment
      */
     public function setTid(?string $tid): Payment
@@ -599,7 +599,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getProofOfSale(): ?string
     {
@@ -607,7 +607,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $proofOfSale
+     * @param string|null $proofOfSale
      * @return Payment
      */
     public function setProofOfSale(?string $proofOfSale): Payment
@@ -617,7 +617,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAuthorizationCode(): ?string
     {
@@ -625,7 +625,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $authorizationCode
+     * @param string|null $authorizationCode
      * @return Payment
      */
     public function setAuthorizationCode(?string $authorizationCode): Payment
@@ -635,7 +635,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getSoftDescriptor(): ?string
     {
@@ -643,7 +643,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $softDescriptor
+     * @param string|null $softDescriptor
      * @return Payment
      */
     public function setSoftDescriptor(?string $softDescriptor): Payment
@@ -653,7 +653,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReturnUrl(): ?string
     {
@@ -661,7 +661,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $returnUrl
+     * @param string|null $returnUrl
      * @return Payment
      */
     public function setReturnUrl(?string $returnUrl): Payment
@@ -671,7 +671,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getProvider(): ?string
     {
@@ -679,7 +679,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $provider
+     * @param string|null $provider
      * @return Payment
      */
     public function setProvider(?string $provider): Payment
@@ -689,7 +689,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getPaymentId(): ?string
     {
@@ -697,7 +697,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $paymentId
+     * @param string|null $paymentId
      * @return Payment
      */
     public function setPaymentId(?string $paymentId): Payment
@@ -707,7 +707,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getType(): ?string
     {
@@ -715,7 +715,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $type
+     * @param string|null $type
      * @return Payment
      */
     public function setType(?string $type): Payment
@@ -833,7 +833,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCurrency(): ?string
     {
@@ -841,7 +841,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $currency
+     * @param string|null $currency
      * @return Payment
      */
     public function setCurrency(?string $currency): Payment
@@ -851,7 +851,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCountry(): ?string
     {
@@ -859,7 +859,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $country
+     * @param string|null $country
      * @return Payment
      */
     public function setCountry(?string $country): Payment
@@ -869,7 +869,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReturnCode(): ?string
     {
@@ -877,7 +877,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $returnCode
+     * @param string|null $returnCode
      * @return Payment
      */
     public function setReturnCode(?string $returnCode): Payment
@@ -887,7 +887,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReturnMessage(): ?string
     {
@@ -895,7 +895,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $returnMessage
+     * @param string|null $returnMessage
      * @return Payment
      */
     public function setReturnMessage(?string $returnMessage): Payment
@@ -995,7 +995,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getUrl(): ?string
     {
@@ -1003,7 +1003,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $url
+     * @param string|null $url
      * @return Payment
      */
     public function setUrl(?string $url): Payment
@@ -1013,7 +1013,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getNumber(): ?string
     {
@@ -1021,7 +1021,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $number
+     * @param string|null $number
      * @return Payment
      */
     public function setNumber(?string $number): Payment
@@ -1031,7 +1031,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getBoletoNumber(): ?string
     {
@@ -1039,7 +1039,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $boletoNumber
+     * @param string|null $boletoNumber
      * @return Payment
      */
     public function setBoletoNumber(?string $boletoNumber): Payment
@@ -1049,7 +1049,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getBarCodeNumber(): ?string
     {
@@ -1057,7 +1057,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $barCodeNumber
+     * @param string|null $barCodeNumber
      * @return Payment
      */
     public function setBarCodeNumber(?string $barCodeNumber): Payment
@@ -1067,7 +1067,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getDigitableLine(): ?string
     {
@@ -1075,7 +1075,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $digitableLine
+     * @param string|null $digitableLine
      * @return Payment
      */
     public function setDigitableLine(?string $digitableLine): Payment
@@ -1085,7 +1085,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAddress(): ?string
     {
@@ -1093,7 +1093,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $address
+     * @param string|null $address
      * @return Payment
      */
     public function setAddress(?string $address): Payment
@@ -1103,7 +1103,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAssignor(): ?string
     {
@@ -1111,7 +1111,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $assignor
+     * @param string|null $assignor
      * @return Payment
      */
     public function setAssignor(?string $assignor): Payment
@@ -1121,7 +1121,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getDemonstrative(): ?string
     {
@@ -1129,7 +1129,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $demonstrative
+     * @param string|null $demonstrative
      * @return Payment
      */
     public function setDemonstrative(?string $demonstrative): Payment
@@ -1139,7 +1139,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getIdentification(): ?string
     {
@@ -1147,7 +1147,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $identification
+     * @param string|null $identification
      * @return Payment
      */
     public function setIdentification(?string $identification): Payment
@@ -1157,7 +1157,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getInstructions(): ?string
     {
@@ -1165,7 +1165,7 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param null|string $instructions
+     * @param string|null $instructions
      * @return Payment
      */
     public function setInstructions(?string $instructions): Payment

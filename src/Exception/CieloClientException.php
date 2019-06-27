@@ -2,8 +2,9 @@
 
 namespace ChicoRei\Packages\Cielo\Exception;
 
-class CieloClientException extends \Exception
-{
+use Exception;
 
+class CieloClientException extends Exception
+{
 
 }

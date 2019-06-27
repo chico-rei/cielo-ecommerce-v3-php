@@ -9,19 +9,19 @@ class AdditionalData extends CieloObject
     /**
      * Ephemeral Public Key
      *
-     * @var null|string
+     * @var string|null
      */
     public $ephemeralPublicKey;
 
     /**
      * Capturecode
      *
-     * @var null|string
+     * @var string|null
      */
     public $capturecode;
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getEphemeralPublicKey(): ?string
     {
@@ -29,7 +29,7 @@ class AdditionalData extends CieloObject
     }
 
     /**
-     * @param null|string $ephemeralPublicKey
+     * @param string|null $ephemeralPublicKey
      * @return AdditionalData
      */
     public function setEphemeralPublicKey(?string $ephemeralPublicKey): AdditionalData
@@ -39,7 +39,7 @@ class AdditionalData extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCapturecode(): ?string
     {
@@ -47,7 +47,7 @@ class AdditionalData extends CieloObject
     }
 
     /**
-     * @param null|string $capturecode
+     * @param string|null $capturecode
      * @return AdditionalData
      */
     public function setCapturecode(?string $capturecode): AdditionalData

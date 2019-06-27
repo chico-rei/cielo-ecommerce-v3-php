@@ -9,26 +9,26 @@ class RecurrentTransaction extends CieloObject
     /**
      * Payment ID
      *
-     * @var null|string
+     * @var string|null
      */
     public $paymentId;
 
     /**
      * Payment Number
      *
-     * @var null|int
+     * @var int|null
      */
     public $paymentNumber;
 
     /**
      * Try Number
      *
-     * @var null|int
+     * @var int|null
      */
     public $tryNumber;
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getPaymentId(): ?string
     {
@@ -36,7 +36,7 @@ class RecurrentTransaction extends CieloObject
     }
 
     /**
-     * @param null|string $paymentId
+     * @param string|null $paymentId
      * @return RecurrentTransaction
      */
     public function setPaymentId(?string $paymentId): RecurrentTransaction

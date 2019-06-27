@@ -10,49 +10,49 @@ class Customer extends CieloObject
     /**
      * District
      *
-     * @var null|string
+     * @var string|null
      */
     public $name;
 
     /**
      * District
      *
-     * @var null|string
+     * @var string|null
      */
     public $email;
 
     /**
      * District
      *
-     * @var null|Carbon
+     * @var Carbon|null
      */
     public $birthDate;
 
     /**
      * District
      *
-     * @var null|string
+     * @var string|null
      */
     public $identity;
 
     /**
      * District
      *
-     * @var null|string
+     * @var string|null
      */
     public $identityType;
 
     /**
      * Address
      *
-     * @var null|Address
+     * @var Address|null
      */
     public $address;
 
     /**
      * Delivery address
      *
-     * @var null|Address
+     * @var Address|null
      */
     public $deliveryAddress;
 
@@ -76,7 +76,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getName(): ?string
     {
@@ -84,7 +84,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @param null|string $name
+     * @param string|null $name
      * @return Customer
      */
     public function setName(?string $name): Customer
@@ -94,7 +94,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getEmail(): ?string
     {
@@ -102,7 +102,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @param null|string $email
+     * @param string|null $email
      * @return Customer
      */
     public function setEmail(?string $email): Customer
@@ -130,7 +130,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getIdentity(): ?string
     {
@@ -138,7 +138,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @param null|string $identity
+     * @param string|null $identity
      * @return Customer
      */
     public function setIdentity(?string $identity): Customer
@@ -148,7 +148,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getIdentityType(): ?string
     {
@@ -156,7 +156,7 @@ class Customer extends CieloObject
     }
 
     /**
-     * @param null|string $identityType
+     * @param string|null $identityType
      * @return Customer
      */
     public function setIdentityType(?string $identityType): Customer

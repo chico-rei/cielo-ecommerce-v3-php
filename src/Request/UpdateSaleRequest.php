@@ -10,26 +10,26 @@ abstract class UpdateSaleRequest extends CieloObject implements IRequest
     /**
      * Payment ID
      *
-     * @var null|string
+     * @var string|null
      */
     public $paymentId;
 
     /**
      * Amount
      *
-     * @var null|int
+     * @var int|null
      */
     public $amount;
 
     /**
      * Service Tax Amount
      *
-     * @var null|int
+     * @var int|null
      */
     public $serviceTaxAmount;
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getPaymentId(): ?string
     {
@@ -37,7 +37,7 @@ abstract class UpdateSaleRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @param null|string $paymentId
+     * @param string|null $paymentId
      * @return static
      */
     public function setPaymentId(?string $paymentId): UpdateSaleRequest
@@ -109,7 +109,7 @@ abstract class UpdateSaleRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @return null|array
+     * @return array|null
      */
     public function getPayload(): ?array
     {

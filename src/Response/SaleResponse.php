@@ -11,21 +11,21 @@ class SaleResponse extends CieloObject
     /**
      * Merchant Order Id
      *
-     * @var null|string
+     * @var string|null
      */
     public $merchantOrderId;
 
     /**
      * Customer
      *
-     * @var null|Customer
+     * @var Customer|null
      */
     public $customer;
 
     /**
      * Payment
      *
-     * @var null|Payment
+     * @var Payment|null
      */
     public $payment;
 
@@ -46,7 +46,7 @@ class SaleResponse extends CieloObject
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getMerchantOrderId(): ?string
     {
@@ -54,7 +54,7 @@ class SaleResponse extends CieloObject
     }
 
     /**
-     * @param null|string $merchantOrderId
+     * @param string|null $merchantOrderId
      * @return SaleResponse
      */
     public function setMerchantOrderId(?string $merchantOrderId): SaleResponse

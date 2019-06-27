@@ -15,7 +15,7 @@ interface IRequest
     public function getPath(): string;
 
     /**
-     * @return null|array
+     * @return array|null
      */
     public function getPayload(): ?array;
 }
