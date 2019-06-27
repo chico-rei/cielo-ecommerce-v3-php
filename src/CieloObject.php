@@ -2,6 +2,8 @@
 
 namespace ChicoRei\Packages\Cielo;
 
+use InvalidArgumentException;
+
 abstract class CieloObject
 {
     /**
@@ -43,7 +45,7 @@ abstract class CieloObject
         }
 
         if (! is_array($data)) {
-            throw new \InvalidArgumentException('create() argument must be of the type array');
+            throw new InvalidArgumentException('create() argument must be an array');
         }
 
         return new static($data);

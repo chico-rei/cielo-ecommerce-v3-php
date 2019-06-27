@@ -4,6 +4,7 @@ namespace ChicoRei\Packages\Cielo\Model;
 
 use Carbon\Carbon;
 use ChicoRei\Packages\Cielo\CieloObject;
+use InvalidArgumentException;
 
 class RecurrentPayment extends CieloObject
 {
@@ -166,35 +167,6 @@ class RecurrentPayment extends CieloObject
     public $status;
 
     /**
-     * @param $array
-     * @return static
-     */
-    public static function create($array = [])
-    {
-        $nextRecurrency = $array['nextRecurrency'] ?? $array['NextRecurrency'] ?? null;
-        $startDate = $array['startDate'] ?? $array['StartDate'] ?? null;
-        $endDate = $array['endDate'] ?? $array['EndDate'] ?? null;
-        $createDate = $array['createDate'] ?? $array['CreateDate'] ?? null;
-        $links = $array['links'] ?? $array['Links'] ?? null;
-        $recurrentTransactions = $array['recurrentTransactions'] ?? $array['RecurrentTransactions'] ?? null;
-
-        $object = new static([
-            'nextRecurrency' => isset($nextRecurrency) ? Carbon::parse($nextRecurrency) : null,
-            'startDate' => isset($startDate) ? Carbon::parse($startDate) : null,
-            'endDate' => isset($endDate) ? Carbon::parse($endDate) : null,
-            'createDate' => isset($createDate) ? Carbon::parse($createDate) : null,
-            'links' => isset($links) ? array_map(function ($newLink) {
-                return Link::create($newLink);
-            }, $links) : null,
-            'recurrentTransactions' => isset($recurrentTransactions) ? array_map(function ($newTransaction) {
-                return RecurrentTransaction::create($newTransaction);
-            }, $recurrentTransactions) : null,
-        ]);
-
-        return $object->fill($array, false);
-    }
-
-    /**
      * @return bool|null
      */
     public function getAuthorizeNow(): ?bool
@@ -239,12 +211,12 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param Carbon|null $nextRecurrency
+     * @param Carbon|string|null $nextRecurrency
      * @return RecurrentPayment
      */
-    public function setNextRecurrency(?Carbon $nextRecurrency): RecurrentPayment
+    public function setNextRecurrency($nextRecurrency): RecurrentPayment
     {
-        $this->nextRecurrency = $nextRecurrency;
+        $this->nextRecurrency = is_null($nextRecurrency) ? null : Carbon::parse($nextRecurrency);
         return $this;
     }
 
@@ -257,12 +229,12 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param Carbon|null $startDate
+     * @param Carbon|string|null $startDate
      * @return RecurrentPayment
      */
-    public function setStartDate(?Carbon $startDate): RecurrentPayment
+    public function setStartDate($startDate): RecurrentPayment
     {
-        $this->startDate = $startDate;
+        $this->startDate = is_null($startDate) ? null : Carbon::parse($startDate);
         return $this;
     }
 
@@ -275,12 +247,12 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param Carbon|null $endDate
+     * @param Carbon|string|null $endDate
      * @return RecurrentPayment
      */
-    public function setEndDate(?Carbon $endDate): RecurrentPayment
+    public function setEndDate($endDate): RecurrentPayment
     {
-        $this->endDate = $endDate;
+        $this->endDate = is_null($endDate) ? null : Carbon::parse($endDate);
         return $this;
     }
 
@@ -347,12 +319,12 @@ class RecurrentPayment extends CieloObject
     }
 
     /**
-     * @param Carbon|null $createDate
+     * @param Carbon|string|null $createDate
      * @return RecurrentPayment
      */
-    public function setCreateDate(?Carbon $createDate): RecurrentPayment
+    public function setCreateDate($createDate): RecurrentPayment
     {
-        $this->createDate = $createDate;
+        $this->createDate = is_null($createDate) ? null : Carbon::parse($createDate);
         return $this;
     }
 
@@ -460,7 +432,35 @@ class RecurrentPayment extends CieloObject
      */
     public function setLinks(?array $links): RecurrentPayment
     {
-        $this->links = $links;
+        if (is_array($links)) {
+            $this->links = [];
+
+            foreach ($links as $link) {
+                $this->addLink($link);
+            }
+        } else {
+            $this->links = null;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param Link|array $link
+     * @return RecurrentPayment
+     */
+    public function addLink($link): RecurrentPayment
+    {
+        if (! is_array($link) && ! $link instanceof Link) {
+            throw new InvalidArgumentException('The argument must be an instance of Link or an array');
+        }
+
+        if (!isset($this->links)) {
+            $this->links = [];
+        }
+
+        $this->links[] = Link::create($link);
+
         return $this;
     }
 
@@ -478,7 +478,35 @@ class RecurrentPayment extends CieloObject
      */
     public function setRecurrentTransactions(?array $recurrentTransactions): RecurrentPayment
     {
-        $this->recurrentTransactions = $recurrentTransactions;
+        if (is_array($recurrentTransactions)) {
+            $this->recurrentTransactions = [];
+
+            foreach ($recurrentTransactions as $recurrentTransaction) {
+                $this->addRecurrentTransaction($recurrentTransaction);
+            }
+        } else {
+            $this->recurrentTransactions = null;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param RecurrentTransaction|array $recurrentTransaction
+     * @return RecurrentPayment
+     */
+    public function addRecurrentTransaction($recurrentTransaction): RecurrentPayment
+    {
+        if (! is_array($recurrentTransaction) && ! $recurrentTransaction instanceof RecurrentTransaction) {
+            throw new InvalidArgumentException('The argument must be an instance of RecurrentTransaction or an array');
+        }
+
+        if (!isset($this->recurrentTransactions)) {
+            $this->recurrentTransactions = [];
+        }
+
+        $this->recurrentTransactions[] = RecurrentTransaction::create($recurrentTransaction);
+
         return $this;
     }
 

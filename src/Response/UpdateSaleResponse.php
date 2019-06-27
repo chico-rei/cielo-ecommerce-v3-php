@@ -4,6 +4,7 @@ namespace ChicoRei\Packages\Cielo\Response;
 
 use ChicoRei\Packages\Cielo\Model\Link;
 use ChicoRei\Packages\Cielo\CieloObject;
+use InvalidArgumentException;
 
 class UpdateSaleResponse extends CieloObject
 {
@@ -83,23 +84,6 @@ class UpdateSaleResponse extends CieloObject
      * @var Link[]|null
      */
     public $links;
-
-    /**
-     * @param $array
-     * @return static
-     */
-    public static function create($array = [])
-    {
-        $links = $array['links'] ?? $array['Links'] ?? null;
-
-        $object = new static([
-            'links' => isset($links) ? array_map(function ($newLink) {
-                return Link::create($newLink);
-            }, $links) : null,
-        ]);
-
-        return $object->fill($array, false);
-    }
 
     /**
      * @return int|null
@@ -295,7 +279,35 @@ class UpdateSaleResponse extends CieloObject
      */
     public function setLinks(?array $links): UpdateSaleResponse
     {
-        $this->links = $links;
+        if (is_array($links)) {
+            $this->links = [];
+
+            foreach ($links as $link) {
+                $this->addLink($link);
+            }
+        } else {
+            $this->links = null;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param Link|array $link
+     * @return UpdateSaleResponse
+     */
+    public function addLink($link): UpdateSaleResponse
+    {
+        if (! is_array($link) && ! $link instanceof Link) {
+            throw new InvalidArgumentException('The argument must be an instance of Link or an array');
+        }
+
+        if (!isset($this->links)) {
+            $this->links = [];
+        }
+
+        $this->links[] = Link::create($link);
+
         return $this;
     }
 

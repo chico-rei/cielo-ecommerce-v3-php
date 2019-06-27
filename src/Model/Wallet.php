@@ -62,21 +62,6 @@ class Wallet extends CieloObject
     public $additionalData;
 
     /**
-     * @param $array
-     * @return static
-     */
-    public static function create($array = [])
-    {
-        $additionalData = $array['additionalData'] ?? $array['AdditionalData'] ?? null;
-
-        $object = new self([
-            'additionalData' => isset($additionalData) ? AdditionalData::create($additionalData) : null,
-        ]);
-
-        return $object->fill($array, false);
-    }
-
-    /**
      * @return string|null
      */
     public function getType(): ?string
@@ -157,12 +142,12 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @param AdditionalData|null $additionalData
+     * @param AdditionalData|array|null $additionalData
      * @return Wallet
      */
-    public function setAdditionalData(?AdditionalData $additionalData): Wallet
+    public function setAdditionalData($additionalData): Wallet
     {
-        $this->additionalData = $additionalData;
+        $this->additionalData = is_null($additionalData) ? null : AdditionalData::create($additionalData);
         return $this;
     }
 

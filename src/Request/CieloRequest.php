@@ -31,22 +31,6 @@ abstract class CieloRequest extends CieloObject implements IRequest
     public $payment;
 
     /**
-     * @param $array
-     * @return static
-     */
-    public static function create($array = [])
-    {
-        $customer = $array['Customer'] ?? $array['customer'] ?? null;
-        $payment = $array['Payment'] ?? $array['payment'] ?? null;
-
-        return new static([
-            'merchantOrderId' => $array['MerchantOrderId'] ?? $array['merchantOrderId'] ?? null,
-            'customer' => isset($customer) ? Customer::create($customer) : null,
-            'payment' => isset($payment) ? Payment::create($payment) : null,
-        ]);
-    }
-
-    /**
      * @return string|null
      */
     public function getMerchantOrderId(): ?string
@@ -73,12 +57,12 @@ abstract class CieloRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @param Customer|null $customer
+     * @param Customer|array|null $customer
      * @return static
      */
-    public function setCustomer(?Customer $customer)
+    public function setCustomer($customer)
     {
-        $this->customer = $customer;
+        $this->customer = is_null($customer) ? null : Customer::create($customer);
         return $this;
     }
 
@@ -91,12 +75,12 @@ abstract class CieloRequest extends CieloObject implements IRequest
     }
 
     /**
-     * @param Payment|null $payment
+     * @param Payment|array|null $payment
      * @return $this
      */
-    public function setPayment(?Payment $payment)
+    public function setPayment($payment)
     {
-        $this->payment = $payment;
+        $this->payment = is_null($payment) ? null : Payment::create($payment);
         return $this;
     }
 

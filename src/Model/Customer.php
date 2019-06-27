@@ -4,6 +4,7 @@ namespace ChicoRei\Packages\Cielo\Model;
 
 use Carbon\Carbon;
 use ChicoRei\Packages\Cielo\CieloObject;
+use InvalidArgumentException;
 
 class Customer extends CieloObject
 {
@@ -57,25 +58,6 @@ class Customer extends CieloObject
     public $deliveryAddress;
 
     /**
-     * @param array $array
-     * @return static
-     */
-    public static function create($array = [])
-    {
-        $birthDate = $array['birthDate'] ?? $array['BirthDate'] ?? null;
-        $address = $array['address'] ?? $array['Address'] ?? null;
-        $deliveryAddress = $array['deliveryAddress'] ?? $array['DeliveryAddress'] ?? null;
-
-        $object = new self([
-            'birthDate' => isset($birthDate) ? Carbon::parse($birthDate) : null,
-            'address' => isset($address) ? Address::create($address) : null,
-            'deliveryAddress' => isset($deliveryAddress) ? Address::create($deliveryAddress) : null,
-        ]);
-
-        return $object->fill($array, false);
-    }
-
-    /**
      * @return string|null
      */
     public function getName(): ?string
@@ -120,12 +102,12 @@ class Customer extends CieloObject
     }
 
     /**
-     * @param Carbon|null $birthDate
+     * @param Carbon|string|null $birthDate
      * @return Customer
      */
-    public function setBirthDate(?Carbon $birthDate): Customer
+    public function setBirthDate($birthDate): Customer
     {
-        $this->birthDate = $birthDate;
+        $this->birthDate = is_null($birthDate) ? null : Carbon::parse($birthDate);
         return $this;
     }
 
@@ -174,12 +156,12 @@ class Customer extends CieloObject
     }
 
     /**
-     * @param Address|null $address
+     * @param Address|array|null $address
      * @return Customer
      */
-    public function setAddress(?Address $address): Customer
+    public function setAddress($address): Customer
     {
-        $this->address = $address;
+        $this->address = is_null($address) ? null : Address::create($address);
         return $this;
     }
 
@@ -192,12 +174,12 @@ class Customer extends CieloObject
     }
 
     /**
-     * @param Address|null $deliveryAddress
+     * @param Address|array|null $deliveryAddress
      * @return Customer
      */
-    public function setDeliveryAddress(?Address $deliveryAddress): Customer
+    public function setDeliveryAddress($deliveryAddress): Customer
     {
-        $this->deliveryAddress = $deliveryAddress;
+        $this->deliveryAddress = is_null($deliveryAddress) ? null : Address::create($deliveryAddress);
         return $this;
     }
 

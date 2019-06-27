@@ -4,6 +4,7 @@ namespace ChicoRei\Packages\Cielo\Model;
 
 use Carbon\Carbon;
 use ChicoRei\Packages\Cielo\CieloObject;
+use InvalidArgumentException;
 
 class Payment extends CieloObject
 {
@@ -367,40 +368,6 @@ class Payment extends CieloObject
     public $wallet;
 
     /**
-     * @param $array
-     * @return static
-     */
-    public static function create($array = [])
-    {
-        $creditCard = $array['creditCard'] ?? $array['CreditCard'] ?? null;
-        $debitCard = $array['debitCard'] ?? $array['DebitCard'] ?? null;
-        $recurrentPayment = $array['recurrentPayment'] ?? $array['RecurrentPayment'] ?? null;
-        $receivedDate = $array['receivedDate'] ?? $array['ReceivedDate'] ?? null;
-        $capturedDate = $array['capturedDate'] ?? $array['CapturedDate'] ?? null;
-        $voidedDate = $array['voidedDate'] ?? $array['VoidedDate'] ?? null;
-        $expirationDate = $array['expirationDate'] ?? $array['ExpirationDate'] ?? null;
-        $links = $array['links'] ?? $array['Links'] ?? null;
-        $wallet = $array['wallet'] ?? $array['Wallet'] ?? null;
-
-        $object = new static([
-            'creditCard' => isset($creditCard) ? Card::create($creditCard) : null,
-            'debitCard' => isset($debitCard) ? Card::create($debitCard) : null,
-            'recurrentPayment' => isset($recurrentPayment) ?
-                RecurrentPayment::create($recurrentPayment) : null,
-            'receivedDate' => isset($receivedDate) ? Carbon::parse($receivedDate) : null,
-            'capturedDate' => isset($capturedDate) ? Carbon::parse($capturedDate) : null,
-            'voidedDate' => isset($voidedDate) ? Carbon::parse($voidedDate) : null,
-            'expirationDate' => isset($expirationDate) ? Carbon::parse($expirationDate) : null,
-            'links' => isset($links) ? array_map(function ($newLink) {
-                return Link::create($newLink);
-            }, $links) : null,
-            'wallet' => isset($wallet) ? Wallet::create($wallet) : null,
-        ]);
-
-        return $object->fill($array, false);
-    }
-
-    /**
      * @return int|null
      */
     public function getServiceTaxAmount(): ?int
@@ -517,12 +484,12 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param RecurrentPayment|null $recurrentPayment
+     * @param RecurrentPayment|array|null $recurrentPayment
      * @return Payment
      */
-    public function setRecurrentPayment(?RecurrentPayment $recurrentPayment): Payment
+    public function setRecurrentPayment($recurrentPayment): Payment
     {
-        $this->recurrentPayment = $recurrentPayment;
+        $this->recurrentPayment = is_null($recurrentPayment) ? null : RecurrentPayment::create($recurrentPayment);
         return $this;
     }
 
@@ -535,12 +502,12 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param Card|null $creditCard
+     * @param Card|array|null $creditCard
      * @return Payment
      */
-    public function setCreditCard(?Card $creditCard): Payment
+    public function setCreditCard($creditCard): Payment
     {
-        $this->creditCard = $creditCard;
+        $this->creditCard = is_null($creditCard) ? null : Card::create($creditCard);
         return $this;
     }
 
@@ -553,12 +520,12 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param Card|null $debitCard
+     * @param Card|array|null $debitCard
      * @return Payment
      */
-    public function setDebitCard(?Card $debitCard): Payment
+    public function setDebitCard($debitCard): Payment
     {
-        $this->debitCard = $debitCard;
+        $this->debitCard = is_null($debitCard) ? null : Card::create($debitCard);
         return $this;
     }
 
@@ -751,12 +718,12 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param Carbon|null $receivedDate
+     * @param Carbon|string|null $receivedDate
      * @return Payment
      */
-    public function setReceivedDate(?Carbon $receivedDate): Payment
+    public function setReceivedDate($receivedDate): Payment
     {
-        $this->receivedDate = $receivedDate;
+        $this->receivedDate = is_null($receivedDate) ? null : Carbon::parse($receivedDate);
         return $this;
     }
 
@@ -787,12 +754,12 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param Carbon|null $capturedDate
+     * @param Carbon|string|null $capturedDate
      * @return Payment
      */
-    public function setCapturedDate(?Carbon $capturedDate): Payment
+    public function setCapturedDate($capturedDate): Payment
     {
-        $this->capturedDate = $capturedDate;
+        $this->capturedDate = is_null($capturedDate) ? null : Carbon::parse($capturedDate);
         return $this;
     }
 
@@ -826,9 +793,9 @@ class Payment extends CieloObject
      * @param Carbon|null $voidedDate
      * @return Payment
      */
-    public function setVoidedDate(?Carbon $voidedDate): Payment
+    public function setVoidedDate($voidedDate): Payment
     {
-        $this->voidedDate = $voidedDate;
+        $this->voidedDate = is_null($voidedDate) ? null : Carbon::parse($voidedDate);
         return $this;
     }
 
@@ -954,7 +921,35 @@ class Payment extends CieloObject
      */
     public function setLinks(?array $links): Payment
     {
-        $this->links = $links;
+        if (is_array($links)) {
+            $this->links = [];
+
+            foreach ($links as $link) {
+                $this->addLink($link);
+            }
+        } else {
+            $this->links = null;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param Link|array $link
+     * @return Payment
+     */
+    public function addLink($link): Payment
+    {
+        if (! is_array($link) && ! $link instanceof Link) {
+            throw new InvalidArgumentException('The argument must be an instance of Link or an array');
+        }
+
+        if (!isset($this->links)) {
+            $this->links = [];
+        }
+
+        $this->links[] = Link::create($link);
+
         return $this;
     }
 
@@ -985,12 +980,12 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param Carbon|null $expirationDate
+     * @param Carbon|string|null $expirationDate
      * @return Payment
      */
-    public function setExpirationDate(?Carbon $expirationDate): Payment
+    public function setExpirationDate($expirationDate): Payment
     {
-        $this->expirationDate = $expirationDate;
+        $this->expirationDate = is_null($expirationDate) ? null : Carbon::parse($expirationDate);
         return $this;
     }
 
@@ -1183,12 +1178,12 @@ class Payment extends CieloObject
     }
 
     /**
-     * @param Wallet|null $wallet
+     * @param Wallet|array|null $wallet
      * @return Payment
      */
-    public function setWallet(?Wallet $wallet): Payment
+    public function setWallet($wallet): Payment
     {
-        $this->wallet = $wallet;
+        $this->wallet = is_null($wallet) ? null : Wallet::create($wallet);
         return $this;
     }
 

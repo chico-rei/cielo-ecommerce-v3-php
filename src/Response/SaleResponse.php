@@ -30,22 +30,6 @@ class SaleResponse extends CieloObject
     public $payment;
 
     /**
-     * @param $array
-     * @return static
-     */
-    public static function create($array = [])
-    {
-        $customer = $array['Customer'] ?? $array['customer'] ?? null;
-        $payment = $array['Payment'] ?? $array['payment'] ?? null;
-
-        return new static([
-            'merchantOrderId' => $array['MerchantOrderId'] ?? $array['merchantOrderId'] ?? null,
-            'customer' => isset($customer) ? Customer::create($customer) : null,
-            'payment' => isset($payment) ? Payment::create($payment) : null,
-        ]);
-    }
-
-    /**
      * @return string|null
      */
     public function getMerchantOrderId(): ?string
@@ -72,12 +56,12 @@ class SaleResponse extends CieloObject
     }
 
     /**
-     * @param Customer|null $customer
+     * @param Customer|array|null $customer
      * @return SaleResponse
      */
-    public function setCustomer(?Customer $customer): SaleResponse
+    public function setCustomer($customer): SaleResponse
     {
-        $this->customer = $customer;
+        $this->customer = is_null($customer) ? null : Customer::create($customer);
         return $this;
     }
 
@@ -90,12 +74,12 @@ class SaleResponse extends CieloObject
     }
 
     /**
-     * @param Payment|null $payment
+     * @param Payment|array|null $payment
      * @return SaleResponse
      */
-    public function setPayment(?Payment $payment): SaleResponse
+    public function setPayment($payment): SaleResponse
     {
-        $this->payment = $payment;
+        $this->payment = is_null($payment) ? null : Payment::create($payment);
         return $this;
     }
 
