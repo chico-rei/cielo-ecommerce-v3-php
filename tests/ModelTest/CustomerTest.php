@@ -28,25 +28,25 @@ class CustomerTest extends TestCase
 
     public function testToArray()
     {
-        $customer = Customer::fromArray(static::getTestData());
+        $customer = Customer::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $customer->toArray());
     }
 
     public function testGetBirthDate()
     {
-        $customer = Customer::fromArray(static::getTestData());
+        $customer = Customer::create(static::getTestData());
         $this->assertInstanceOf(Carbon::class, $customer->getBirthDate());
     }
 
     public function testGetAddress()
     {
-        $customer = Customer::fromArray(static::getTestData());
+        $customer = Customer::create(static::getTestData());
         $this->assertInstanceOf(Address::class, $customer->getAddress());
     }
 
     public function testGetDeliveryAddress()
     {
-        $customer = Customer::fromArray(static::getTestData());
+        $customer = Customer::create(static::getTestData());
         $this->assertInstanceOf(Address::class, $customer->getDeliveryAddress());
         $this->assertNotSame($customer->getAddress(), $customer->getDeliveryAddress());
     }

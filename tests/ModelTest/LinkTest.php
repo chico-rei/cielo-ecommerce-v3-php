@@ -22,7 +22,7 @@ class LinkTest extends TestCase
 
     public function testToArray()
     {
-        $link = Link::fromArray(static::getTestData());
+        $link = Link::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $link->toArray());
     }
 }

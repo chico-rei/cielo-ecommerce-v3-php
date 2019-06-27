@@ -27,7 +27,7 @@ class CardTest extends TestCase
 
     public function testToArray()
     {
-        $card = Card::fromArray(static::getTestData());
+        $card = Card::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $card->toArray());
     }
 }

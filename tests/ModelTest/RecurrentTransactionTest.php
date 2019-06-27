@@ -22,7 +22,7 @@ class RecurrentTransactionTest extends TestCase
 
     public function testToArray()
     {
-        $recurrentTransaction = RecurrentTransaction::fromArray(static::getTestData());
+        $recurrentTransaction = RecurrentTransaction::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $recurrentTransaction->toArray());
     }
 }

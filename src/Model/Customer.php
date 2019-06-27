@@ -60,7 +60,7 @@ class Customer extends CieloObject
      * @param array $array
      * @return static
      */
-    public static function fromArray($array = [])
+    public static function create($array = [])
     {
         $birthDate = $array['birthDate'] ?? $array['BirthDate'] ?? null;
         $address = $array['address'] ?? $array['Address'] ?? null;
@@ -68,8 +68,8 @@ class Customer extends CieloObject
 
         $object = new self([
             'birthDate' => isset($birthDate) ? Carbon::parse($birthDate) : null,
-            'address' => isset($address) ? Address::fromArray($address) : null,
-            'deliveryAddress' => isset($deliveryAddress) ? Address::fromArray($deliveryAddress) : null,
+            'address' => isset($address) ? Address::create($address) : null,
+            'deliveryAddress' => isset($deliveryAddress) ? Address::create($deliveryAddress) : null,
         ]);
 
         return $object->fill($array, false);

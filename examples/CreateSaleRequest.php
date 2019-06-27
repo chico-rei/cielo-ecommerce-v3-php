@@ -8,7 +8,7 @@ use \ChicoRei\Packages\Cielo\Cielo;
 use \ChicoRei\Packages\Cielo\Merchant;
 use \ChicoRei\Packages\Cielo\Util;
 
-$merchant = Merchant::fromArray([
+$merchant = Merchant::create([
     'id' => 'ID',
     'key' => 'KEY',
 ]);

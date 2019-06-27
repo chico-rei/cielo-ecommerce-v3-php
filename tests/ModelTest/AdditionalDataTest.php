@@ -21,7 +21,7 @@ class AdditionalDataTest extends TestCase
 
     public function testToArray()
     {
-        $additionalData = AdditionalData::fromArray(static::getTestData());
+        $additionalData = AdditionalData::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $additionalData->toArray());
     }
 }

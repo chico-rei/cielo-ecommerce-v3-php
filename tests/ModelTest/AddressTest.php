@@ -27,7 +27,7 @@ class AddressTest extends TestCase
 
     public function testToArray()
     {
-        $address = Address::fromArray(static::getTestData());
+        $address = Address::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $address->toArray());
     }
 }

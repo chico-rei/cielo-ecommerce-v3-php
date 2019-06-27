@@ -33,15 +33,15 @@ class SaleResponse extends CieloObject
      * @param $array
      * @return static
      */
-    public static function fromArray($array = [])
+    public static function create($array = [])
     {
         $customer = $array['Customer'] ?? $array['customer'] ?? null;
         $payment = $array['Payment'] ?? $array['payment'] ?? null;
 
         return new static([
             'merchantOrderId' => $array['MerchantOrderId'] ?? $array['merchantOrderId'] ?? null,
-            'customer' => isset($customer) ? Customer::fromArray($customer) : null,
-            'payment' => isset($payment) ? Payment::fromArray($payment) : null,
+            'customer' => isset($customer) ? Customer::create($customer) : null,
+            'payment' => isset($payment) ? Payment::create($payment) : null,
         ]);
     }
 

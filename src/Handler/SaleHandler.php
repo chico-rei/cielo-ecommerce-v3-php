@@ -36,7 +36,7 @@ class SaleHandler
     public function create($payload): SaleResponse
     {
         if (is_array($payload)) {
-            $payload = CreateSaleRequest::fromArray($payload);
+            $payload = CreateSaleRequest::create($payload);
         }
 
         if (!$payload instanceof CreateSaleRequest) {
@@ -45,7 +45,7 @@ class SaleHandler
 
         $response = $this->client->sendApiRequest($payload);
 
-        return SaleResponse::fromArray($response);
+        return SaleResponse::create($response);
     }
 
     /**
@@ -59,7 +59,7 @@ class SaleHandler
     public function get($payload): SaleResponse
     {
         if (is_string($payload)) {
-            $payload = GetSaleRequest::fromArray(['paymentId' => $payload]);
+            $payload = GetSaleRequest::create(['paymentId' => $payload]);
         }
 
         if (!$payload instanceof GetSaleRequest) {
@@ -68,7 +68,7 @@ class SaleHandler
 
         $response = $this->client->sendQueryApiRequest($payload);
 
-        return SaleResponse::fromArray($response);
+        return SaleResponse::create($response);
     }
 
     /**
@@ -82,9 +82,9 @@ class SaleHandler
     public function capture($payload): UpdateSaleResponse
     {
         if (is_string($payload)) {
-            $payload = CaptureSaleRequest::fromArray(['paymentId' => $payload]);
+            $payload = CaptureSaleRequest::create(['paymentId' => $payload]);
         } elseif (is_array($payload)) {
-            $payload = CaptureSaleRequest::fromArray($payload);
+            $payload = CaptureSaleRequest::create($payload);
         }
 
         if (!$payload instanceof CaptureSaleRequest) {
@@ -93,7 +93,7 @@ class SaleHandler
 
         $response = $this->client->sendApiRequest($payload);
 
-        return UpdateSaleResponse::fromArray($response);
+        return UpdateSaleResponse::create($response);
     }
 
     /**
@@ -107,9 +107,9 @@ class SaleHandler
     public function void($payload): UpdateSaleResponse
     {
         if (is_string($payload)) {
-            $payload = VoidSaleRequest::fromArray(['paymentId' => $payload]);
+            $payload = VoidSaleRequest::create(['paymentId' => $payload]);
         } elseif (is_array($payload)) {
-            $payload = VoidSaleRequest::fromArray($payload);
+            $payload = VoidSaleRequest::create($payload);
         }
 
         if (!$payload instanceof VoidSaleRequest) {
@@ -118,6 +118,6 @@ class SaleHandler
 
         $response = $this->client->sendApiRequest($payload);
 
-        return UpdateSaleResponse::fromArray($response);
+        return UpdateSaleResponse::create($response);
     }
 }

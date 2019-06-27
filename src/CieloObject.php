@@ -33,20 +33,20 @@ abstract class CieloObject
     }
 
     /**
-     * @param $array
+     * @param array|static $data
      * @return static
      */
-    public static function fromArray($array = [])
+    public static function create($data = [])
     {
-        if ($array instanceof static) {
-            return $array;
+        if ($data instanceof static) {
+            return $data;
         }
 
-        if (! is_array($array)) {
-            throw new \InvalidArgumentException('fromArray() argument must be of the type array');
+        if (! is_array($data)) {
+            throw new \InvalidArgumentException('create() argument must be of the type array');
         }
 
-        return new static($array);
+        return new static($data);
     }
 
     /**

@@ -48,37 +48,37 @@ class RecurrentPaymentTest extends TestCase
 
     public function testToArray()
     {
-        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $recurrentPayment = RecurrentPayment::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $recurrentPayment->toArray());
     }
 
     public function testGetNextRecurrency()
     {
-        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $recurrentPayment = RecurrentPayment::create(static::getTestData());
         $this->assertInstanceOf(Carbon::class, $recurrentPayment->getNextRecurrency());
     }
 
     public function testGetStartDate()
     {
-        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $recurrentPayment = RecurrentPayment::create(static::getTestData());
         $this->assertInstanceOf(Carbon::class, $recurrentPayment->getStartDate());
     }
 
     public function testGetEndDate()
     {
-        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $recurrentPayment = RecurrentPayment::create(static::getTestData());
         $this->assertInstanceOf(Carbon::class, $recurrentPayment->getEndDate());
     }
 
     public function testGetCreateDate()
     {
-        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $recurrentPayment = RecurrentPayment::create(static::getTestData());
         $this->assertInstanceOf(Carbon::class, $recurrentPayment->getCreateDate());
     }
 
     public function testGetLinks()
     {
-        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $recurrentPayment = RecurrentPayment::create(static::getTestData());
         $this->assertInternalType('array', $recurrentPayment->getLinks());
         $this->assertCount(2, $recurrentPayment->getLinks());
 
@@ -89,7 +89,7 @@ class RecurrentPaymentTest extends TestCase
 
     public function testGetRecurrentTransactions()
     {
-        $recurrentPayment = RecurrentPayment::fromArray(static::getTestData());
+        $recurrentPayment = RecurrentPayment::create(static::getTestData());
         $this->assertInternalType('array', $recurrentPayment->getRecurrentTransactions());
         $this->assertCount(2, $recurrentPayment->getRecurrentTransactions());
 

@@ -88,13 +88,13 @@ class UpdateSaleResponse extends CieloObject
      * @param $array
      * @return static
      */
-    public static function fromArray($array = [])
+    public static function create($array = [])
     {
         $links = $array['links'] ?? $array['Links'] ?? null;
 
         $object = new static([
             'links' => isset($links) ? array_map(function ($newLink) {
-                return Link::fromArray($newLink);
+                return Link::create($newLink);
             }, $links) : null,
         ]);
 

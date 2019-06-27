@@ -25,13 +25,13 @@ class WalletTest extends TestCase
 
     public function testToArray()
     {
-        $wallet = Wallet::fromArray(static::getTestData());
+        $wallet = Wallet::create(static::getTestData());
         $this->assertEquals(static::getTestData(), $wallet->toArray());
     }
 
     public function testGetAdditionalData()
     {
-        $wallet = Wallet::fromArray(static::getTestData());
+        $wallet = Wallet::create(static::getTestData());
         $this->assertInstanceOf(AdditionalData::class, $wallet->getAdditionalData());
     }
 }
