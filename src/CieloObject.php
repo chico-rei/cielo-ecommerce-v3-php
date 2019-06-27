@@ -18,15 +18,14 @@ abstract class CieloObject
 
     /**
      * @param array $array
-     * @param bool $overwrite
      * @return static
      */
-    public function fill(array $array = [], $overwrite = true)
+    public function fill(array $array = [])
     {
         foreach ($array as $key => $value) {
             $setter = 'set'.ucfirst($key);
 
-            if (method_exists($this, $setter) && ($overwrite || !isset($this->{lcfirst($key)}))) {
+            if (method_exists($this, $setter)) {
                 $this->$setter($value);
             }
         }
