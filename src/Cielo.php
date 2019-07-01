@@ -2,6 +2,7 @@
 
 namespace ChicoRei\Packages\Cielo;
 
+use ChicoRei\Packages\Cielo\Handler\CardBinHandler;
 use ChicoRei\Packages\Cielo\Handler\SaleHandler;
 
 class Cielo
@@ -46,6 +47,11 @@ class Cielo
     private $saleHandler;
 
     /**
+     * @var CardBinHandler
+     */
+    private $cardBinHandler;
+
+    /**
      * Cielo Service constructor.
      *
      * @param Merchant $merchant Cielo Merchant object
@@ -77,5 +83,17 @@ class Cielo
         }
 
         return $this->saleHandler;
+    }
+
+    /**
+     * @return CardBinHandler
+     */
+    public function cardBin(): CardBinHandler
+    {
+        if (!isset($this->cardBinHandler)) {
+            $this->cardBinHandler = new CardBinHandler($this->client);
+        }
+
+        return $this->cardBinHandler;
     }
 }

@@ -28,11 +28,16 @@ Requires PHP 7.1 or newer.
 * [x] Update Payment
     * [x] Capture
     * [x] Void
-* [ ] Update Recurrent Payment
+    * [ ] Recurrent Payment
 * [x] Query Payment
     * [x] By Payment ID
     * [ ] By Order ID
+* [x] Query Card Bin
 * [ ] Tokenize Card
+* [ ] Fraud Analysis
+* [ ] Velocity
+* [ ] Zero Auth
+* [ ] Silent Order Post
 
 ## Usage
 
