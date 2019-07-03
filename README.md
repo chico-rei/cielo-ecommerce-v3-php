@@ -12,7 +12,7 @@ This is a PHP client wrapper for [Cielo e-Commerce v3](https://developercielo.gi
 Via [Composer](https://getcomposer.org/)
 
 ```bash
-$ composer require chico-rei/cielo-ecommerce-v3-php
+$ composer require chico-rei/cielo-ecommerce-v3-php "^1.0"
 ```
 
 Requires PHP 7.1 or newer.
