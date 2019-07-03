@@ -42,6 +42,8 @@ Requires PHP 7.1 or newer.
 ## Usage
 
 ```php
+require 'path/to/vendor/autoload.php';
+
 use \ChicoRei\Packages\Cielo\Cielo;
 use \ChicoRei\Packages\Cielo\Merchant;
 use \ChicoRei\Packages\Cielo\Util;
@@ -72,7 +74,12 @@ try {
         ]
     ]);
     
-    $response->getPayment()->getStatus(); // Transaction Status
+    echo $response->getPayment()->getStatus(); // Transaction Status Code 
+    
+    $returnCode = $response->getPayment()->getReturnCode(); // Ex: '00'
+    $details = Util::getReturnCodeDetails($returnCode);
+    echo $details['definition']; // Transação autorizada com sucesso.
+    
 } catch (CieloAPIException $e) {
     // Handle API errors (or validation errors)
 } catch (Exception $e) {

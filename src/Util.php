@@ -39,4 +39,26 @@ class Util
     {
         return $amount ? intval($amount * 100) : 0;
     }
+
+    /**
+     * Status code details
+     *
+     * @param int $statusCode
+     * @return array|null
+     */
+    public static function getStatusDetails(int $statusCode): ?array
+    {
+        return CieloCodeConstants::STATUS[$statusCode] ?? null;
+    }
+
+    /**
+     * Return code details
+     *
+     * @param string $returnCode
+     * @return array|null
+     */
+    public static function getReturnCodeDetails(string $returnCode): ?array
+    {
+        return CieloCodeConstants::RETURN_CODE[$returnCode] ?? null;
+    }
 }
