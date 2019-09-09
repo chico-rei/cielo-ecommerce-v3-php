@@ -38,7 +38,7 @@ class Cielo
      * @var array
      */
     private $defaultOptions = [
-        'timeout' => 15.0,
+        'timeout' => 60.0,
     ];
 
     /**
