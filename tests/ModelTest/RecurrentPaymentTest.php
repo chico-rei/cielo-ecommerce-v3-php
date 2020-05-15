@@ -79,7 +79,7 @@ class RecurrentPaymentTest extends TestCase
     public function testGetLinks()
     {
         $recurrentPayment = RecurrentPayment::create(static::getTestData());
-        $this->assertInternalType('array', $recurrentPayment->getLinks());
+        $this->assertIsArray($recurrentPayment->getLinks());
         $this->assertCount(2, $recurrentPayment->getLinks());
 
         foreach ($recurrentPayment->getLinks() as $link) {
@@ -90,7 +90,7 @@ class RecurrentPaymentTest extends TestCase
     public function testGetRecurrentTransactions()
     {
         $recurrentPayment = RecurrentPayment::create(static::getTestData());
-        $this->assertInternalType('array', $recurrentPayment->getRecurrentTransactions());
+        $this->assertIsArray($recurrentPayment->getRecurrentTransactions());
         $this->assertCount(2, $recurrentPayment->getRecurrentTransactions());
 
         foreach ($recurrentPayment->getRecurrentTransactions() as $recurrentTransactions) {

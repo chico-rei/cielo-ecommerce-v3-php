@@ -1,6 +1,6 @@
 # Cielo e-Commerce API v3 client wrapper for PHP
 
-[![Build Status](https://travis-ci.org/chico-rei/cielo-ecommerce-v3-php.svg)](https://travis-ci.org/chico-rei/cielo-ecommerce-v3-php) 
+[![Build Status](https://travis-ci.org/chico-rei/cielo-ecommerce-v3-php.svg?branch=master)](https://travis-ci.org/chico-rei/cielo-ecommerce-v3-php) 
 [![Coverage Status](https://coveralls.io/repos/github/chico-rei/cielo-ecommerce-v3-php/badge.svg?branch=master)](https://coveralls.io/github/chico-rei/cielo-ecommerce-v3-php?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/chico-rei/cielo-ecommerce-v3-php/v/stable)](https://packagist.org/packages/chico-rei/cielo-ecommerce-v3-php)
 [![License](https://poser.pugx.org/chico-rei/cielo-ecommerce-v3-php/license)](https://packagist.org/packages/chico-rei/cielo-ecommerce-v3-php)
@@ -12,10 +12,10 @@ This is a PHP client wrapper for [Cielo e-Commerce v3](https://developercielo.gi
 Via [Composer](https://getcomposer.org/)
 
 ```bash
-$ composer require chico-rei/cielo-ecommerce-v3-php "^1.0"
+$ composer require chico-rei/cielo-ecommerce-v3-php "dev-master"
 ```
 
-Requires PHP 7.1 or newer.
+Requires PHP 7.2 or newer.
 
 ## Features
 
