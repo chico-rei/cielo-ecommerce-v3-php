@@ -18,7 +18,7 @@ class UpdateSaleResponse extends CieloObject
     /**
      * Reason code
      *
-     * @var int|null
+     * @var string|null
      */
     public $reasonCode;
 
@@ -32,7 +32,7 @@ class UpdateSaleResponse extends CieloObject
     /**
      * Provider return code
      *
-     * @var int|null
+     * @var string|null
      */
     public $providerReturnCode;
 
@@ -104,18 +104,18 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getReasonCode(): ?int
+    public function getReasonCode(): ?string
     {
         return $this->reasonCode;
     }
 
     /**
-     * @param int|null $reasonCode
+     * @param string|null $reasonCode
      * @return UpdateSaleResponse
      */
-    public function setReasonCode(?int $reasonCode): UpdateSaleResponse
+    public function setReasonCode(?string $reasonCode): UpdateSaleResponse
     {
         $this->reasonCode = $reasonCode;
         return $this;
@@ -140,18 +140,18 @@ class UpdateSaleResponse extends CieloObject
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getProviderReturnCode(): ?int
+    public function getProviderReturnCode(): ?string
     {
         return $this->providerReturnCode;
     }
 
     /**
-     * @param int|null $providerReturnCode
+     * @param string|null $providerReturnCode
      * @return UpdateSaleResponse
      */
-    public function setProviderReturnCode(?int $providerReturnCode): UpdateSaleResponse
+    public function setProviderReturnCode(?string $providerReturnCode): UpdateSaleResponse
     {
         $this->providerReturnCode = $providerReturnCode;
         return $this;
