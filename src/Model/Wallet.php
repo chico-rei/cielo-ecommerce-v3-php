@@ -43,7 +43,7 @@ class Wallet extends CieloObject
     /**
      * ECI
      *
-     * @var int|null
+     * @var string|null
      */
     public $eci;
 
@@ -98,18 +98,18 @@ class Wallet extends CieloObject
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getEci(): ?int
+    public function getEci(): ?string
     {
         return $this->eci;
     }
 
     /**
-     * @param int|null $eci
+     * @param string|null $eci
      * @return Wallet
      */
-    public function setEci(?int $eci): Wallet
+    public function setEci(?string $eci): Wallet
     {
         $this->eci = $eci;
         return $this;

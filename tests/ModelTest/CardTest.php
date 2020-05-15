@@ -1,6 +1,6 @@
 <?php
 
-namespace ChicoRei\Packages\Cielo\Tests\Model;
+namespace ChicoRei\Packages\Cielo\Tests\ModelTest;
 
 use ChicoRei\Packages\Cielo\Model\Card;
 use PHPUnit\Framework\TestCase;
@@ -28,6 +28,6 @@ class CardTest extends TestCase
     public function testToArray()
     {
         $card = Card::create(static::getTestData());
-        $this->assertEquals(static::getTestData(), $card->toArray());
+        $this->assertSame(static::getTestData(), $card->toArray());
     }
 }

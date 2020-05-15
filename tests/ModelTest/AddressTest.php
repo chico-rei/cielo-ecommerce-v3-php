@@ -1,6 +1,6 @@
 <?php
 
-namespace ChicoRei\Packages\Cielo\Tests\Model;
+namespace ChicoRei\Packages\Cielo\Tests\ModelTest;
 
 use ChicoRei\Packages\Cielo\Model\Address;
 use PHPUnit\Framework\TestCase;
@@ -28,6 +28,6 @@ class AddressTest extends TestCase
     public function testToArray()
     {
         $address = Address::create(static::getTestData());
-        $this->assertEquals(static::getTestData(), $address->toArray());
+        $this->assertSame(static::getTestData(), $address->toArray());
     }
 }

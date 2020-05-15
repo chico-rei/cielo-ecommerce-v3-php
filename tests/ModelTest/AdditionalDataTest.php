@@ -1,6 +1,6 @@
 <?php
 
-namespace ChicoRei\Packages\Cielo\Tests\Model;
+namespace ChicoRei\Packages\Cielo\Tests\ModelTest;
 
 use ChicoRei\Packages\Cielo\Model\AdditionalData;
 use PHPUnit\Framework\TestCase;
@@ -15,13 +15,13 @@ class AdditionalDataTest extends TestCase
     {
         return [
             'EphemeralPublicKey' => 'EphemeralKeyTest',
-            'Capturecode' => 'CaptureCodeTest',
+            'CaptureCode' => 'CaptureCodeTest',
         ];
     }
 
     public function testToArray()
     {
         $additionalData = AdditionalData::create(static::getTestData());
-        $this->assertEquals(static::getTestData(), $additionalData->toArray());
+        $this->assertSame(static::getTestData(), $additionalData->toArray());
     }
 }

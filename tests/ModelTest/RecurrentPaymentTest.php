@@ -1,6 +1,6 @@
 <?php
 
-namespace ChicoRei\Packages\Cielo\Tests\Model;
+namespace ChicoRei\Packages\Cielo\Tests\ModelTest;
 
 use Carbon\Carbon;
 use ChicoRei\Packages\Cielo\Model\Link;
@@ -49,7 +49,7 @@ class RecurrentPaymentTest extends TestCase
     public function testToArray()
     {
         $recurrentPayment = RecurrentPayment::create(static::getTestData());
-        $this->assertEquals(static::getTestData(), $recurrentPayment->toArray());
+        $this->assertSame(static::getTestData(), $recurrentPayment->toArray());
     }
 
     public function testGetNextRecurrency()
@@ -82,9 +82,7 @@ class RecurrentPaymentTest extends TestCase
         $this->assertIsArray($recurrentPayment->getLinks());
         $this->assertCount(2, $recurrentPayment->getLinks());
 
-        foreach ($recurrentPayment->getLinks() as $link) {
-            $this->assertInstanceOf(Link::class, $link);
-        }
+        $this->assertContainsOnlyInstancesOf(Link::class, $recurrentPayment->getLinks());
     }
 
     public function testGetRecurrentTransactions()
@@ -93,8 +91,9 @@ class RecurrentPaymentTest extends TestCase
         $this->assertIsArray($recurrentPayment->getRecurrentTransactions());
         $this->assertCount(2, $recurrentPayment->getRecurrentTransactions());
 
-        foreach ($recurrentPayment->getRecurrentTransactions() as $recurrentTransactions) {
-            $this->assertInstanceOf(RecurrentTransaction::class, $recurrentTransactions);
-        }
+        $this->assertContainsOnlyInstancesOf(
+            RecurrentTransaction::class,
+            $recurrentPayment->getRecurrentTransactions()
+        );
     }
 }

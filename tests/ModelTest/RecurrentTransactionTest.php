@@ -1,6 +1,6 @@
 <?php
 
-namespace ChicoRei\Packages\Cielo\Tests\Model;
+namespace ChicoRei\Packages\Cielo\Tests\ModelTest;
 
 use ChicoRei\Packages\Cielo\Model\RecurrentTransaction;
 use PHPUnit\Framework\TestCase;
@@ -23,6 +23,6 @@ class RecurrentTransactionTest extends TestCase
     public function testToArray()
     {
         $recurrentTransaction = RecurrentTransaction::create(static::getTestData());
-        $this->assertEquals(static::getTestData(), $recurrentTransaction->toArray());
+        $this->assertSame(static::getTestData(), $recurrentTransaction->toArray());
     }
 }

@@ -19,7 +19,16 @@
         "php-coveralls/php-coveralls": "^2.2",
         "squizlabs/php_codesniffer": "3.*"
     },
-
+    "autoload": {
+        "psr-4": {
+            "ChicoRei\\Packages\\Cielo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ChicoRei\\Packages\\Cielo\\Tests\\": "tests"
+        }
+    },
     "scripts": {
         "test": [
             "@phpunit",
@@ -27,10 +36,5 @@
         ],
         "phpunit": "phpunit",
         "phpcs": "phpcs"
-    },
-    "autoload": {
-        "psr-4": {
-            "ChicoRei\\Packages\\Cielo\\": "src"
-        }
     }
 }

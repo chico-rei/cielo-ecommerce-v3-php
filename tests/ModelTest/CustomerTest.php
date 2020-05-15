@@ -1,6 +1,6 @@
 <?php
 
-namespace ChicoRei\Packages\Cielo\Tests\Model;
+namespace ChicoRei\Packages\Cielo\Tests\ModelTest;
 
 use Carbon\Carbon;
 use ChicoRei\Packages\Cielo\Model\Address;
@@ -29,7 +29,7 @@ class CustomerTest extends TestCase
     public function testToArray()
     {
         $customer = Customer::create(static::getTestData());
-        $this->assertEquals(static::getTestData(), $customer->toArray());
+        $this->assertSame(static::getTestData(), $customer->toArray());
     }
 
     public function testGetBirthDate()

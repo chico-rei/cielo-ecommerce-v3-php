@@ -14,11 +14,11 @@ class AdditionalData extends CieloObject
     public $ephemeralPublicKey;
 
     /**
-     * Capturecode
+     * Capture Code
      *
      * @var string|null
      */
-    public $capturecode;
+    public $captureCode;
 
     /**
      * @return string|null
@@ -41,18 +41,18 @@ class AdditionalData extends CieloObject
     /**
      * @return string|null
      */
-    public function getCapturecode(): ?string
+    public function getCaptureCode(): ?string
     {
-        return $this->capturecode;
+        return $this->captureCode;
     }
 
     /**
-     * @param string|null $capturecode
+     * @param string|null $captureCode
      * @return AdditionalData
      */
-    public function setCapturecode(?string $capturecode): AdditionalData
+    public function setCaptureCode(?string $captureCode): AdditionalData
     {
-        $this->capturecode = $capturecode;
+        $this->captureCode = $captureCode;
         return $this;
     }
 
@@ -63,7 +63,7 @@ class AdditionalData extends CieloObject
     {
         return [
             'EphemeralPublicKey' => $this->getEphemeralPublicKey(),
-            'Capturecode' => $this->getCapturecode(),
+            'CaptureCode' => $this->getCapturecode(),
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ChicoRei\Packages\Cielo\Tests\Model;
+namespace ChicoRei\Packages\Cielo\Tests\ModelTest;
 
 use ChicoRei\Packages\Cielo\Model\AdditionalData;
 use ChicoRei\Packages\Cielo\Model\Wallet;
@@ -17,7 +17,7 @@ class WalletTest extends TestCase
         return [
             'Type' => Wallet::TYPE_MASTERPASS,
             'WalletKey' => 'TestKey',
-            'Eci' => 5,
+            'Eci' => '5',
             'Cavv' => 'TestCavv',
             'AdditionalData' => AdditionalDataTest::getTestData(),
         ];
@@ -26,7 +26,7 @@ class WalletTest extends TestCase
     public function testToArray()
     {
         $wallet = Wallet::create(static::getTestData());
-        $this->assertEquals(static::getTestData(), $wallet->toArray());
+        $this->assertSame(static::getTestData(), $wallet->toArray());
     }
 
     public function testGetAdditionalData()
