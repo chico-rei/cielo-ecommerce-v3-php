@@ -1,36 +1,46 @@
 {
-    "name": "chico-rei/cielo-ecommerce-v3-php",
-    "type": "library",
-    "description": "chico-rei",
-    "keywords": ["Cielo", "Ecommerce", "API", "v3"],
-    "homepage": "https://github.com/chico-rei/cielo-ecommerce-v3-php",
-    "license": "MIT",
-    "authors": [{
-        "name": "Chico Rei",
-        "email": "php@chicorei.com.br"
-    }],
-    "require": {
-        "php": "^8.3",
-        "guzzlehttp/guzzle": "~7.0",
-        "nesbot/carbon": "^1.16||^2.0"
+  "name": "gustavolc901010/cielo-ecommerce-v3-php",
+  "type": "library",
+  "description": "Cielo API",
+  "keywords": [
+    "Cielo",
+    "Ecommerce",
+    "API",
+    "v3"
+  ],
+  "homepage": "https://github.com/GustavoLC901010/cielo-ecommerce-v3-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chico Rei",
+      "email": "php@chicorei.com.br"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^11.3.0",
-        "php-coveralls/php-coveralls": "~1.0",
-        "squizlabs/php_codesniffer": "3.*"
-    },
-
-    "scripts": {
-        "test": [
-            "@phpunit",
-            "@phpcs"
-        ],
-        "phpunit": "phpunit",
-        "phpcs": "phpcs"
-    },
-    "autoload": {
-        "psr-4": {
-            "ChicoRei\\Packages\\Cielo\\": "src"
-        }
+    {
+      "name": "Gustavo L. Carvalho",
+      "email": "gustavolc06@gmail.com"
     }
+  ],
+  "require": {
+    "php": "^8.3",
+    "guzzlehttp/guzzle": "~7.0",
+    "nesbot/carbon": "^1.16||^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.3.0",
+    "php-coveralls/php-coveralls": "~1.0",
+    "squizlabs/php_codesniffer": "3.*"
+  },
+  "scripts": {
+    "test": [
+      "@phpunit",
+      "@phpcs"
+    ],
+    "phpunit": "phpunit",
+    "phpcs": "phpcs"
+  },
+  "autoload": {
+    "psr-4": {
+      "ChicoRei\\Packages\\Cielo\\": "src"
+    }
+  }
 }
