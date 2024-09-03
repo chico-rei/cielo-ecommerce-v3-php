@@ -1,5 +1,5 @@
 {
-  "name": "gustavolc901010/cielo-ecommerce-v3-php",
+  "name": "chico-rei/cielo-ecommerce-v3-php",
   "type": "library",
   "description": "Cielo API",
   "keywords": [
@@ -8,7 +8,7 @@
     "API",
     "v3"
   ],
-  "homepage": "https://github.com/GustavoLC901010/cielo-ecommerce-v3-php",
+  "homepage": "https://github.com/chico-rei/cielo-ecommerce-v3-php",
   "license": "MIT",
   "authors": [
     {
