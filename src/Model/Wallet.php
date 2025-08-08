@@ -27,6 +27,11 @@ class Wallet extends CieloObject
     const TYPE_SAMSUNG_PAY = 'SamsungPay';
 
     /**
+     * Wallet Type Android Pay
+     */
+    const TYPE_ANDROID_PAY = 'AndroidPay';
+
+    /**
      * Type
      *
      * @var string|null

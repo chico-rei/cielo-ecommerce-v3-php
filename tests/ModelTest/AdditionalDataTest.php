@@ -16,6 +16,7 @@ class AdditionalDataTest extends TestCase
         return [
             'EphemeralPublicKey' => 'EphemeralKeyTest',
             'CaptureCode' => 'CaptureCodeTest',
+            'Signature' => 'Signature',
         ];
     }
 

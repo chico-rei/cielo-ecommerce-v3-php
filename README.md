@@ -15,7 +15,7 @@ Via [Composer](https://getcomposer.org/)
 $ composer require chico-rei/cielo-ecommerce-v3-php "dev-master"
 ```
 
-Requires PHP 7.2 or newer.
+Requires PHP 7.4 or newer.
 
 ## Features
 

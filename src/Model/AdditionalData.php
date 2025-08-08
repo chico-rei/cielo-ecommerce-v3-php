@@ -21,6 +21,13 @@ class AdditionalData extends CieloObject
     public $captureCode;
 
     /**
+     * Signature
+     *
+     * @var string|null
+     */
+    public $signature;
+
+    /**
      * @return string|null
      */
     public function getEphemeralPublicKey(): ?string
@@ -57,6 +64,24 @@ class AdditionalData extends CieloObject
     }
 
     /**
+     * @return string|null
+     */
+    public function getSignature(): ?string
+    {
+        return $this->signature;
+    }
+
+    /**
+     * @param string|null $signature
+     * @return AdditionalData
+     */
+    public function setSignature(?string $signature): AdditionalData
+    {
+        $this->signature = $signature;
+        return $this;
+    }
+
+    /**
      * @inheritdoc
      */
     public function toArray(): array
@@ -64,6 +89,7 @@ class AdditionalData extends CieloObject
         return [
             'EphemeralPublicKey' => $this->getEphemeralPublicKey(),
             'CaptureCode' => $this->getCapturecode(),
+            'Signature' => $this->getSignature(),
         ];
     }
 }
