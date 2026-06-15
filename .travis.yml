@@ -4,14 +4,13 @@ dist: trusty
 
 matrix:
   include:
-  - php: 7.4
-    env: ANALYSIS='true'
-  - php: 7.4
-    env: COMPOSER_ARGS='--prefer-lowest'
-  - php: 8.1
   - php: 8.2
+    env: ANALYSIS='true'
+  - php: 8.2
+    env: COMPOSER_ARGS='--prefer-lowest'
   - php: 8.3
   - php: 8.4
+  - php: 8.5
   - php: nightly
     env: COMPOSER_ARGS='--ignore-platform-reqs'
   allow_failures:

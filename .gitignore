@@ -2,3 +2,5 @@ composer.lock
 vendor
 .idea
 build
+.phpunit.cache
+.phpunit.result.cache

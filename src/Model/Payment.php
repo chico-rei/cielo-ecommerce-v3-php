@@ -1195,7 +1195,7 @@ class Payment extends CieloObject
         return [
             'ServiceTaxAmount' => $this->getServiceTaxAmount(),
             'Installments' => $this->getInstallments(),
-            'Interest' => $this->getInstallments(),
+            'Interest' => $this->getInterest(),
             'Capture' => $this->getCapture(),
             'Authenticate' => $this->getAuthenticate(),
             'Recurrent' => $this->getRecurrent(),
